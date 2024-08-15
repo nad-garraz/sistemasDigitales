@@ -8,4 +8,4 @@
                                                     |___/                        
 ```
 
-## Algunas notas que tomaré e inmortalizaré del 2C 2024.
+## Algunas notas que tomaré e inmortalizaré del 2C 2024... ponele.
