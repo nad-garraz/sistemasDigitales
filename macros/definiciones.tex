@@ -1,0 +1,36 @@
+%misc
+\def\ytext{\quad \text{y} \quad}
+
+% Iconos
+\def\iconTeoriaUno{\tiny\faIcon{laptop}}
+\def\iconTeoriaDos{\tiny\faIcon{calculator}}
+\def\iconTeoriaTres{\tiny\faIcon{laptop-code}}
+
+% Colores
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{OliveGreen}{#1}}
+\newcommand{\blue}[1]{\textcolor{Cerulean}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\yellow}[1]{\textcolor{YellowOrange}{#1}}
+\newcommand{\magenta}[1]{\textcolor{magenta}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\transparente}[1]{\color[rgb]{1,1,1,0.5}{#1}}
+
+%llaves
+\newcommand{\llave}[2]{ \left\{ \begin{array}{#1} #2 \end{array}\right. }
+
+\newcommand{\ub}[2]{ \underbrace{\textstyle #1}_{\mathclap{#2}} }
+\newcommand{\ob}[2]{ \overbrace{\textstyle #1}^{\mathclap{#2}} }
+
+%=======================================================
+% Comandos con flechas extensibles.
+%=======================================================
+% *Flechita* extensible con texto {arriba} y [abajo] 
+
+\NewDocumentCommand{\flecha}{m o}{%
+  \IfNoValueTF{#2}{%
+    \xrightarrow[]{\text{#1}}
+  }{
+    \xrightarrow[\text{#2}]{\text{#1}}
+  }
+}

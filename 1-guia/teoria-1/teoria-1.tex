@@ -1,0 +1,137 @@
+\begin{itemize}[label=\iconTeoriaUno]
+  \item  \textit{Complejidad:}\par
+        Es lo que nos da la necesida de abstraer.
+
+  \item \textit{Abstracción}: \par
+        Para lidiar con la \textit{complejidad} que tienen los sistemas usamos la abstracción.\par
+        De \underline{menor} a \underline{mayor} abstracción:
+        \begin{center}
+          electrones
+          $\to$
+          transistores
+          $\to$
+          circuitos analógicos
+          $\to$
+          circuitos digitales
+          $\to$
+          circuitos de lógica
+          $\to$
+          micro-arquitectura
+          $\to$
+          arquitectura
+          $\to$
+          sistema operativo
+          $\to$
+          aplicaciones de software
+        \end{center}
+
+        Lo más abstracto es más fácil de controlar e implementar que lo menos abstracto.
+
+  \item \textit{Sistemas numéricos:}
+        \begin{itemize}[label=\iconTeoriaDos]
+          \item \textit{Decimal:}\par
+                $$
+                  9745_{10} = 9 \times 10^3 + 7 \times 10^2 + 4 \times 10^1 + 5 \times 10^0
+                $$
+                El rango de un número \underline{\textit{decimal}} con $n$ dígitos mayor o igual a cero es $10^n: 0,1, \dots, 10^{n} - 1$
+
+          \item \textit{Binario:}\par
+                $$
+                  1101_2 = 1 \times 2^3 + 1 \times 2^2 + 0 \times 10^1 + 1 \times 10^0
+                  = 13_{10}
+                $$
+                El rango de un número \underline{\textit{binario}} con $n$ dígitos mayor o igual a cero es $2^n: 0,1, \dots, 2^{n} - 1$.
+                Si tengo solo un bit, \textit{\red{b}inary dig\red{it}}, puedo obtener o bien 0 o bien 1. Si tengo dos bits, entonces
+                puedo tener $2^2$ dígitos, 00, 01, 10, 11. (el rango es después de todo 4).
+
+          \item \textit{Hexadecimal:}\par
+                $$
+                  2AD_{16} = 2 \times 16^2 + A \times 16^1 + D \times 16^0
+                  = 685_{10}
+                $$
+                El rango de un número \underline{\textit{hexadecimal}} con $n$ dígitos mayor o igual a cero es $16^n: 0,1, \dots, 16^{n} - 1$.
+                Cada dígito de un número en base hexadecimal corresponde a un número binario
+                de 4-bits. Después de todo un número $i_16$,
+                tiene un rango de 16: $0,\dots 15$ y
+                un número binario de 4-bits tiene un rango de $2^4 = 16$ \checkmark
+                $$
+                  2AD_{16} = \ub{0010}{2}\ub{1010}{A}\ub{1101}{D}\,_2
+                $$
+        \end{itemize}
+
+  \item \textit{Operaciones entre números binarios:} Se poné picante según la \underline{representación usada}.
+        \begin{itemize}[label=\iconTeoriaDos]
+          \item Sumar es fácil si los números son positivos. Tengo \textit{\red{overflow}} si el resultado
+                tiene más cifras que bits disponibles para almacenar dicho resultado.
+        \end{itemize}
+
+  \item \textit{Números binarios con signo: }\par
+        Hay distintas \textit{representaciones} para hacer esto, acá están las 2 más usadas:
+        \begin{itemize}[label=\iconTeoriaDos]
+          \item \textit{Signo $\big/$ magnitud:}\par
+                El bit más significativo, el de más a la izquierda, marca el \purple{signo}.
+                Un número con $n$ bits en esta representación tiene un rango: $[-2^{n-1}+1, 2^{n-1} - 1]$.
+                Por ejemplo con 3-bits:\par
+                El rango es [-3, 3]
+                $$
+                  \begin{array}{|ccr|}
+                    \hline
+                    \purple{0}00 & \to & \red{0}  \\
+                    \purple{0}01 & \to & 1        \\
+                    \purple{0}10 & \to & 2        \\
+                    \purple{0}11 & \to & 3        \\
+                    \purple{1}00 & \to & \red{-0} \\
+                    \purple{1}01 & \to & -1       \\
+                    \purple{1}10 & \to & -2       \\
+                    \purple{1}11 & \to & -3       \\
+                    \hline
+                  \end{array}
+                $$
+                \textit{Sumar normalmente en esta representación no tiene sentido}.
+
+          \item \textit{Complemento de 2:}\par
+                \begin{itemize}[label=\iconTeoriaTres]
+                  \item Menos intuitivo, pero más útil. Si tengo un número de $n$-bits, voy a tener siempre:
+                        $$
+                          \begin{array}{|rcr|l}
+                            \cline{1-3}
+                            0_{10}           & \to & 00\dots00_2  &                                    \\
+                            -1_{10}          & \to & 11\dots11_2  &                                    \\
+                            -2^{n-1}_{10}    & \to & 100\dots00_2 & \to \textit{\purple{weird number}} \\
+                            2^{n-1} - 1_{10} & \to & 011\dots11_2 &                                    \\
+                            \cline{1-3}
+                          \end{array}
+                        $$
+                        Teniendo al 0, $-1, \,-2^{n-1} \ytext (2^{n-1} -1)$, puedo encontrar el resto de la \textit{representación}:
+
+                  \item Para encontrar el opuesto a un número, se cambian los 0 por 1 y vicerveza
+                        \footnote{chiste: vicerveza = 2 \faIcon{beer}. Se escribe viceversa \faIcon{smile}}
+                        , luego se le suma 1 a eso, ej:
+                        $$
+                          5_{10} = 0101
+                          \flecha{busco}[$-5$] 1010 + 0001 = 1011 = -5_{10}.
+                        $$
+                        Cosa que no funciona con el \purple{\textit{weird number}}, porque su complemento te da a él mismo \faIcon{hat-wizard}.
+
+                  \item El rango es de $[-2^{n-1}, 2^{n-1} -1],\,2^n$ elementos. Hay un elemento negativo más que positivos.
+
+                  \item Ejemplito: En 3-bits me encuentro todo el conjunto, $[-4, 3]$:
+                        $$
+                          \begin{array}{|rcr|}
+                            \hline
+                            000 & \to & 0_{10}  \\
+                            001 & \to & 1_{10}  \\
+                            010 & \to & 2_{10}  \\
+                            011 & \to & 3_{10}  \\
+                            100 & \to & -4_{10} \\
+                            101 & \to & -3_{10} \\
+                            110 & \to & -2_{10} \\
+                            111 & \to & -1_{10} \\
+                            \hline
+                          \end{array}
+                        $$
+
+                \end{itemize}
+        \end{itemize}
+
+\end{itemize}
