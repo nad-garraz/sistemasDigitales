@@ -1,3 +1,16 @@
 \begin{enunciado}{\ejercicio}
-\hacer
+  ¿Puede alguna cadena binaria de \texttt{k} dígitos, interpretada en \compDos,
+  representar un número que no puede ser representado por una cadena de la misma longitud, interpretada en \sigMag?
+  ¿Y al revés?
 \end{enunciado}
+
+\hyperlink{teoria-1:complementoA2}{De al teoría de \compDos}, tengo que el rango es distinto en las distintas interpretaciones. Hay
+un número más en la de \compDos.\par
+
+Si tengo \texttt{k} dígitos 
+\nBase{(-2$^{\texttt{k-1}}$)}{10} \texttt{=} \nBase{($\ub{\mathtt{100...0}}{\mathtt{k-bits}}$)\,}{2}.
+Número que no puedo representar en \sigMag porque el menor número es \nBase{(-2$^{\texttt{k-1}}$ + 1)}{10}.\par
+
+La representación \compDos contiene a todos los número de la representación \sigMag.
+
+\red{¿Hay algo que aprender? O es solo eso?}

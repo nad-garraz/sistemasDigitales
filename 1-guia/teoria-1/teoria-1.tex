@@ -68,7 +68,7 @@
 
   \item \textit{Operaciones entre números binarios:} Se poné picante según la \underline{representación usada}.
         \begin{itemize}[label=\iconTeoriaDos]
-          \item Sumar es fácil si los números son positivos. Tengo \textit{\red{overflow}} si el resultado
+          \item Sumar es fácil si los números son positivos. Tengo \overflow si el resultado
                 tiene más cifras que bits disponibles para almacenar dicho resultado.
         \end{itemize}
 
@@ -100,7 +100,7 @@
                 \textit{Sumar normalmente en esta representación no tiene sentido}. Representa en total 2$^\texttt{n} - 1$ elementos
                 porque el \red{-0} está usando un lugar al pedo.
 
-          \item \hypertarget{teoria-1:complementoA2}{\textit{Complemento de 2:}}\par
+          \item \hypertarget{teoria-1:complementoA2}{\compDos:}\par
                 \begin{itemize}[label=\iconTeoriaTres]
                   \item Menos intuitivo, pero más útil. Si tengo un número de \texttt{n}-bits, voy a tener siempre:
                         \begin{center}
@@ -144,8 +144,8 @@
                           \end{tabular}
                         \end{center}
 
-                  \item \textit{Suma en complemento de 2:}
-                        Si sumo dos números de distinto signo no voy a tener \textit{\red{overflow}}!
+                  \item \textit{Suma en \compDos:}
+                        Si sumo dos números de distinto signo no voy a tener \overflow!
                         \begin{center}
                           4 bits:
                           \nBase{-4}{10} + \nBase{5}{10} =

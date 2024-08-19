@@ -1,3 +1,50 @@
 \begin{enunciado}{\ejercicio}
-\hacer
+  Codificar los siguientes números en base 2, usando la precisión y forma de representación
+  indicada en cada caso. Comparar los resultados.
+
+  \begin{enumerate}[label=\tiny $\blacksquare_{\tt\alph*}$]
+    \item \nBase{0}{10} $\to$ usando 8 bits, notación \sigMag y notación \compDos.
+    \item \nBase{-1}{10} $\to$ usando 8 y 16 bits, en ambos casos notación \sigMag y notación \compDos.
+    \item \nBase{255}{10} $\to$ usando 8 bits notación sin signo y 16 bits notación \compDos.
+    \item \nBase{-128}{10} $\to$ usando 8 y 16 bits, en ambos casos notación \compDos.
+    \item \nBase{128}{10} $\to$ usando 8 bits, notación sin signo y 16 notación \compDos.
+  \end{enumerate}
 \end{enunciado}
+Leer la \hyperlink{teoria-1:complementoA2}{técnica para encontrar los números con \compDos}.
+{
+\tt
+\begin{enumerate}[label=\tiny $\blacksquare_{\tt\alph*}$]
+  \item
+        \sigMag: \nBase{0}{10} = \nBase{(0000 0000)}{2} $\igual{\red{?}}$ \nBase{(1000 0000)}{2}. \red{abuso de notación?}\par
+
+        \compDos: \nBase{0}{10} = \nBase{(0000 0000)}{2}.
+
+  \item
+        \sigMag:\par
+                \nBase{-1}{10} = \nBase{(1000 0001)}{2}.\par
+                \nBase{-1}{10} = \nBase{(1000 0000 0000 0001)}{2}.\par
+
+        \compDos:\par
+        \nBase{-1}{10} = \nBase{(1111 1111)}{2}.\par
+        \nBase{-1}{10} = \nBase{(1111 1111 1111 1111)}{2}.\par
+
+  \item
+        Sin Signo:\par
+                \nBase{255}{10} = \nBase{(1111 1111)}{2}.\par
+        \compDos:\par
+                \nBase{255}{10} = \nBase{(0000 0000 1111 1111)}{2}.\par
+
+  \item 
+        \compDos:\par
+                \nBase{-128}{10} = \nBase{(1000 0000)}{2}.\par
+                \nBase{-128}{10} $\mathtt{\to}$ \nBase{128}{10} = \nBase{(0000 0000 1000 0000)}{2}
+                $\flecha{busco}[opuesto]$
+                \nBase{(1111 1111 1000 0000)}{2} = \nBase{-128}{10}.\par
+
+  \item 
+        Sin Signo:\par
+                \nBase{128}{10} = \nBase{(1000 0000)}{2}.\par
+                \nBase{128}{10} = \nBase{(0000 0000 1000 0000)}{2}.\par
+\end{enumerate}
+\red{¿Qué se puede interpretar de esto?}
+}

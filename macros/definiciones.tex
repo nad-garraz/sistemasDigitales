@@ -2,6 +2,9 @@
 \def\ytext{\quad \text{y} \quad}
 \DeclareMathOperator{\X}{\text{x}}
 \newcommand{\nBase}[2]{\texttt{#1}$_{\texttt{#2}}$}
+\newcommand{\sigMag}{\texttt{signo+magnitud} }
+\newcommand{\compDos}{\texttt{complemento a 2} }
+\newcommand{\overflow}{\magenta{\texttt{overflow}} }
 
 %% Cartelito HACER EJERCICIO
 \newcommand{\hacer}{
@@ -54,6 +57,17 @@
 \def\update{\tiny
   {\today\ @ \currenttime}
 }
+
+% Dado que muchas veces ponemos cosas sobre un signo '='
+%  acá está el comando para escribir \igual{arriba}[abajo] con texto!
+\NewDocumentCommand{\igual}{m o}{
+  \IfNoValueTF{#2}{
+          \overset{\mathclap{\texttt{#1}}}{\texttt{=}}
+  }{
+          \tt \overset{\mathclap{\texttt{#1}}}{\underset{\mathclap{\texttt{#2}}}=}
+  }
+}
+
 %=======================================================
 % sección ejercicio con su respectivo formato y contador
 %=======================================================
