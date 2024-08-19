@@ -1,0 +1,48 @@
+\begin{enunciado}{\ejercicio}
+  Sean los siguientes numerales binarios de ocho dígitos:\par
+  \begin{center}
+    {\tt
+      r = \nBase{(1011 1111)}{2},
+      s = \nBase{(1000 0000)}{2} y
+      t = \nBase{(1111 1111)}{2}.
+    }
+  \end{center}
+  \par
+  ¿Qué números representan si asumimos que son codificaciones de
+  enteros en complemento a 2? ¿ Y si fueran codificaciones en signo+magnitud?
+\end{enunciado}
+
+En la
+\hyperlink{teoria-1:complementoA2}{teoría están cuales son los valores \textit{amigos} de la representación complemento a 2}
+\begin{itemize}[label=\tiny\faIcon{smile}]
+  \item
+        Notar que si \texttt{r} es de complemento:\par
+        {\tt
+          r + 64 = \nBase{(1011 1111)}{2} + \nBase{(0100 0000)}{2} =
+          \nBase{(1111 1111)}{2} = \nBase{-1}{10}
+          $\to$
+                r = \nBase{-65}{10}
+        }\par
+        Puedo llegar a lo mismo usando la técnica para encontrar el complemento de \texttt{r}:\par
+        $\overline{\mathtt{r}} = \overline{\mathtt{1011 1111}}_{\mathtt{2}}$
+        $\flecha{cambio}[\texttt{1}$\leftrightarrow$\texttt{0}]$
+        \nBase{(0100 0000)}{2}
+        $\flecha{sumo}[1]$
+        \nBase{(0100 000\blue{1})}{2} =
+                \nBase{}{2} = \nBase{65}{10} = $\overline{\mathtt{r}}$, entonces \texttt{r} = \nBase{-65}{10}
+
+        Si fuese de signo+magnitud:
+        {\tt r = \nBase{(1011 1111)}{2} = \nBase{-63}{10} }\par
+        Sumar normalmente en la representación de signo+magnitud es para problemas.
+
+  \item
+        Para complemento a 2: {\tt s = \nBase{(1000 0000)}{2} = \nBase{-128}{10} }
+        es el \purple{\hyperlink{teoria-1:weirdNumber}{\textit{weird number}}}\par
+        Y en signo+magnitud: {\tt s = \nBase{(1000 0000)}{2} = \nBase{-0}{10} }
+
+  \item
+        Para complemento a 2: {\tt t = \nBase{(1111 1111)}{2} = \nBase{-1}{10} } \par
+        Y en signo+magnitud: {\tt t = \nBase{(1111 1111)}{2} = \nBase{-127}{10} }
+
+\end{itemize}
+

@@ -1,0 +1,70 @@
+\begin{enunciado}{\ejercicio}
+  Realizar las siguientes sumas de precisión fija, sin
+  convertir a decimal. Indicar en cada caso si hubo acarreo.
+  \begin{multicols}{4}
+    \begin{enumerate}[label=\alph*)]
+      \item
+            \begin{tabular}{rl}
+                  & \nBase{100001}{2}       \\
+              $+$ & \nBase{011110}{2}       \\ \hline
+                  & \nBase{\_\_\_\_\_\_}{2}
+            \end{tabular}
+
+      \item
+            \begin{tabular}{rl}
+                  & \nBase{100001}{2}       \\
+              $+$ & \nBase{011111}{2}       \\ \hline
+                  & \nBase{\_\_\_\_\_\_}{2}
+            \end{tabular}
+
+      \item
+            \begin{tabular}{rl}
+                  & \nBase{9999}{16}    \\
+              $+$ & \nBase{1111}{16}    \\ \hline
+                  & \nBase{\_\_\_\_}{2}
+            \end{tabular}
+
+      \item
+            \begin{tabular}{rl}
+                  & \nBase{F0F0}{2}     \\
+              $+$ & \nBase{F0CA}{2}     \\ \hline
+                  & \nBase{\_\_\_\_}{2}
+            \end{tabular}
+    \end{enumerate}
+  \end{multicols}
+\end{enunciado}
+
+\begin{multicols}{2}
+  \begin{enumerate}[label=\alph*)]
+    \item
+          \begin{tabular}{rl}
+                & \nBase{100001}{2} \\
+            $+$ & \nBase{011110}{2} \\ \hline
+                & \nBase{111111}{2}
+          \end{tabular}
+
+    \item
+          \begin{tabular}{rr}
+            \texttt{Acarreo} & \nBase{\purple{111111}\ \ }{}      \\
+                             & \nBase{100001}{2}              \\
+            $+$              & \nBase{011111}{2}              \\ \hline
+                             & \nBase{\purple{1}00000\purple{0}}{2}
+          \end{tabular}
+
+    \item
+          \begin{tabular}{rl}
+                & \nBase{9999}{16} \\
+            $+$ & \nBase{1111}{16} \\ \hline
+                & \nBase{AAAA}{2}
+          \end{tabular}
+
+    \item
+          \begin{tabular}{rl}
+            \texttt{Acarreo} & \nBase{\purple{1\ 1\ }}{} \\
+                             & \nBase{\ F0F0}{2}       \\
+            $+$              & \nBase{\ F0CA}{2}       \\ \hline
+                             & \nBase{\purple{1}E1BA}{2}
+          \end{tabular}
+  \end{enumerate}
+\end{multicols}
+\red{Precisión fija? Tengo overflow en el b y en el d? Se tira el decimal de más? Cómo se expresa el resultado?}
