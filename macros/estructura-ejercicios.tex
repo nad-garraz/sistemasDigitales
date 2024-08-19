@@ -1,38 +1,40 @@
-%=========================
-% Un poco de teoría
-%=========================
+%%%=========================
+%%% Un poco de teoría
+%%%=========================
 \subsubsection*{\hypertarget{teoria-\guia}{Notas teóricas:}}
 \input{./teoria-\guia/teoria-\guia.tex}
 
 \newpage % página nueva
 
-%=========================
-% Ejercicios guia
-%=========================
+%%%=========================
+%%% Ejercicios guia
+%%%=========================
 \subsubsection*{Ejercicios de la guía:}
 
 \foreach \x in {1,...,\cantidadEjerciciosGuia} { % cantidad de ejercicios de la guía
-		\IfFileExists{./ejercicios-\guia/ej-\x-\guia.tex}{
-			\input{./ejercicios-\guia/ej-\x-\guia.tex}
-		}{
-			\typeout{¡Atención! El archivo ./ejercicios-\guia/ej-\x-\guia.tex no está.
-            Revisar variable: 'cantidadEjerciciosGuia` en \guia-sol.tex}
-		}
-	}
+    \IfFileExists{./ejercicios-\guia/ej-\x-\guia.tex}{
+      \input{./ejercicios-\guia/ej-\x-\guia.tex}
+    }{
+      \typeout{¡Atención! El archivo ./ejercicios-\guia/ej-\x-\guia.tex no está.
+        Revisar variable: 'cantidadEjerciciosGuia` en \guia-sol.tex}
+    }
+  }
 
-\newpage % página nueva
+%% 
 
-%=========================
-% Ejercicios extras, parciales, etc.
-%=========================
+%\newpage % página nueva
 
-\subsubsection*{\hypertarget{extras-\guia}{{\Large\color{orange}{\faIcon{fire}}} Ejercicios extras:}}
+%%%=========================
+%%% Ejercicios extras, parciales, etc.
+%%%=========================
 
-\foreach \x in {1,...,\cantidadEjerciciosExtras} { % cantidad de ejercicios extras
-		\IfFileExists{./ejercicios-\guia-extra/ej-extra-\x-\guia.tex}{
-			\input{./ejercicios-\guia-extra/ej-extra-\x-\guia.tex}
-		}{
-			\typeout{¡Atención! El archivo ./ejercicios-\guia-extra/ej-extra-\x-\guia.tex no está.
-             Revisar variable: 'cantidadEjerciciosExtras' en \guia-sol.tex}
-		}
-	}
+%\subsubsection*{\Large\color{orange}{\faIcon{fire}}} Ejercicios extras:}}
+%
+%\foreach \x in {1,...,\cantidadEjerciciosExtras} { % cantidad de ejercicios extras
+%		\IfFileExists{./ejercicios-\guia-extra/ej-extra-\x-\guia.tex}{
+%			\input{./ejercicios-\guia-extra/ej-extra-\x-\guia.tex}
+%		}{
+%			\typeout{¡Atención! El archivo ./ejercicios-\guia-extra/ej-extra-\x-\guia.tex no está.
+%             Revisar variable: 'cantidadEjerciciosExtras' en \guia-sol.tex}
+%		}
+%	}

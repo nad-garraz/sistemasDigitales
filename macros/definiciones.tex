@@ -1,10 +1,25 @@
 %misc
 \def\ytext{\quad \text{y} \quad}
+\DeclareMathOperator{\X}{\text{x}}
+\newcommand{\nBase}[2]{\texttt{#1}$_{\texttt{#2}}$}
 
-% Iconos
-\def\iconTeoriaUno{\tiny\faIcon{laptop}}
-\def\iconTeoriaDos{\tiny\faIcon{calculator}}
-\def\iconTeoriaTres{\tiny\faIcon{laptop-code}}
+%% Cartelito HACER EJERCICIO
+\newcommand{\hacer}{
+  {\color{red!80!black}{\faIcon{flushed}... hay que hacerlo! \faIcon{sad-cry}}}\par
+  {\color{black!70!white}
+    \small Si querés mandarlo: Telegram $\to$ \href{\dirTelegram}{\small\faIcon{telegram}},
+    o  mejor aún si querés subirlo en \LaTeX $\to$ \href{\dirRepo}{\small \faIcon{github}}.
+  }\par
+}
+
+
+% separadores
+\newcommand{\separador}{
+  \par\noindent\rule{\linewidth}{0.4pt}\par
+}
+\newcommand{\separadorCorto}{
+  \par\noindent\rule{0.5\linewidth}{0.4pt}\par
+}
 
 % Colores
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -34,3 +49,49 @@
     \xrightarrow[\text{#2}]{\text{#1}}
   }
 }
+
+% Update time
+\def\update{\tiny
+  {\today\ @ \currenttime}
+}
+%=======================================================
+% sección ejercicio con su respectivo formato y contador
+%=======================================================
+%iconito
+\def\fueguito{{\color{orange}{\faIcon{fire}}}}
+
+\newcounter{ejercicio}[section] % contador que se resetea en cada sección
+\renewcommand{\theejercicio}{\arabic{ejercicio}} % el contador es un número arabic
+\newcommand{\ejercicio}{%
+  \stepcounter{ejercicio}% incremento en uno
+  \titleformat{\section}[runin]{\bfseries}{\theejercicio}{1em}{}%
+  \section*{Ejercicio \theejercicio}\labelEjercicio{ej:\theejercicio}
+}
+
+% Label y refencia para ejercicio hay alguna forma más elegante de hacer esto?
+\newcommand{\labelEjercicio}[1]{
+  \addtocounter{ejercicio}{-1} % counter - 1
+  \refstepcounter{ejercicio} % referencia al anterior y luego + 1
+  \label{#1}
+  }
+\newcommand{\refEjercicio}[1]{{\bf \ref{#1}.}}
+
+%%%=======================================================
+%%% fin sección ejercicio con su respectivo formato y contador
+%%%=======================================================
+
+\newenvironment{enunciado}[1]{% Toma un parametro obligatorio: \ejExtra o \ejercicio 
+  \par
+  \noindent
+  \begin{minipage}{\linewidth}
+    \separador % linea sobre el enunciado
+    #1
+    }% contenido
+    {
+    \separadorCorto % linea debajo del enunciado
+    \par
+  \end{minipage}\par
+}
+
+%% leDire
+\def\neverGonnaGiveYouUp{https://www.youtube.com/watch?v=dQw4w9WgXcQ}

@@ -1,3 +1,10 @@
+%%% ===========================
+%%% Iconos para los itemize
+\def\iconTeoriaUno{\tiny\faIcon{laptop}}
+\def\iconTeoriaDos{\tiny\faIcon{calculator}}
+\def\iconTeoriaTres{\tiny\faIcon{laptop-code}}
+%%% ===========================
+
 \begin{itemize}[label=\iconTeoriaUno]
   \item  \textit{Complejidad:}\par
         Es lo que nos da la necesida de abstraer.
@@ -29,34 +36,34 @@
 
   \item \textit{Sistemas numéricos:}
         \begin{itemize}[label=\iconTeoriaDos]
-          \item \textit{Decimal:}\par
-                $$
-                  9745_{10} = 9 \times 10^3 + 7 \times 10^2 + 4 \times 10^1 + 5 \times 10^0
-                $$
-                El rango de un número \underline{\textit{decimal}} con $n$ dígitos mayor o igual a cero es $10^n: 0,1, \dots, 10^{n} - 1$
+          \item \textit{Decimal:}
+                \begin{center}
+                  \nBase{9745}{10} $ = 9 \times 10^3 + 7 \times 10^2 + 4 \times 10^1 + 5 \times 10^0$
+                \end{center}
+                El rango de un número \underline{\textit{decimal}} con \texttt{n} dígitos mayor o igual a cero es $10^{\texttt{n}}: 0,1, \dots, 10^{\texttt{n}} - 1$
 
-          \item \textit{Binario:}\par
-                $$
-                  1101_2 = 1 \times 2^3 + 1 \times 2^2 + 0 \times 10^1 + 1 \times 10^0
-                  = 13_{10}
-                $$
-                El rango de un número \underline{\textit{binario}} con $n$ dígitos mayor o igual a cero es $2^n: 0,1, \dots, 2^{n} - 1$.
+          \item \textit{Binario:}
+                \begin{center}
+                  \nBase{1101}{2} $= 1 \times 2^3 + 1 \times 2^2 + 0 \times 10^1 + 1 \times 10^0 =$ \nBase{13}{10}.
+                \end{center}
+                El rango de un número \underline{\textit{binario}} con \texttt{n} dígitos mayor o igual a cero es $2^{\texttt{n}}: 0,1, \dots, 2^{\texttt{n}} - 1$.
                 Si tengo solo un bit, \textit{\red{b}inary dig\red{it}}, puedo obtener o bien 0 o bien 1. Si tengo dos bits, entonces
                 puedo tener $2^2$ dígitos, 00, 01, 10, 11. (el rango es después de todo 4).
 
-          \item \textit{Hexadecimal:}\par
-                $$
-                  2AD_{16} = 2 \times 16^2 + A \times 16^1 + D \times 16^0
-                  = 685_{10}
-                $$
-                El rango de un número \underline{\textit{hexadecimal}} con $n$ dígitos mayor o igual a cero es $16^n: 0,1, \dots, 16^{n} - 1$.
+          \item \textit{Hexadecimal:}
+                \begin{center}
+                  \nBase{2AD}{16} $= 2 \times 16^2 + \texttt{A} \times 16^1 + \texttt{D} \times 16^0 =$ \nBase{685}{10}
+                \end{center}
+                El rango de un número \underline{\textit{hexadecimal}} con \texttt{n} dígitos mayor o igual a cero es $16^{\texttt{n}}: 0,1, \dots, 16^{\texttt{n}} - 1$.
                 Cada dígito de un número en base hexadecimal corresponde a un número binario
-                de 4-bits. Después de todo un número $i_16$,
-                tiene un rango de 16: $0,\dots 15$ y
+                de 4-bits. Después de todo un número $i_{16}$ de \textit{un solo dígito} tiene un
+                rango de 16: $0,\dots 15$ y
                 un número binario de 4-bits tiene un rango de $2^4 = 16$ \checkmark
-                $$
-                  2AD_{16} = \ub{0010}{2}\ub{1010}{A}\ub{1101}{D}\,_2
-                $$
+
+                \begin{center}
+                  \nBase{2AD}{16} $= \ub{\texttt{0010}}{\texttt{2}} \ub{\texttt{1010}}{\texttt{A}}\ub{\texttt{1101}}{\texttt{D}}\,_{\texttt{2}}$
+                \end{center}
+
         \end{itemize}
 
   \item \textit{Operaciones entre números binarios:} Se poné picante según la \underline{representación usada}.
@@ -68,70 +75,93 @@
   \item \textit{Números binarios con signo: }\par
         Hay distintas \textit{representaciones} para hacer esto, acá están las 2 más usadas:
         \begin{itemize}[label=\iconTeoriaDos]
+
           \item \textit{Signo $\big/$ magnitud:}\par
                 El bit más significativo, el de más a la izquierda, marca el \purple{signo}.
-                Un número con $n$ bits en esta representación tiene un rango: $[-2^{n-1}+1, 2^{n-1} - 1]$.
+                Un número con \texttt{n} bits en esta representación tiene un rango: $[-2^{\texttt{n}-1}+1, 2^{\texttt{n}-1} - 1]$.
                 Por ejemplo con 3-bits:\par
                 El rango es [-3, 3]
                 $$
-                  \begin{array}{|ccr|}
+                  \begin{array}{|ccc|}
                     \hline
-                    \purple{0}00 & \to & \red{0}  \\
-                    \purple{0}01 & \to & 1        \\
-                    \purple{0}10 & \to & 2        \\
-                    \purple{0}11 & \to & 3        \\
-                    \purple{1}00 & \to & \red{-0} \\
-                    \purple{1}01 & \to & -1       \\
-                    \purple{1}10 & \to & -2       \\
-                    \purple{1}11 & \to & -3       \\
+                    \texttt{Base 2}       & \to & \texttt{Base 10}  \\
+                    \hline
+                    \texttt{\purple{0}00} & \to & \texttt{\red{0}}  \\
+                    \texttt{\purple{0}01} & \to & \texttt{1}        \\
+                    \texttt{\purple{0}10} & \to & \texttt{2}        \\
+                    \texttt{\purple{0}11} & \to & \texttt{3}        \\
+                    \texttt{\purple{1}00} & \to & \texttt{\red{-0}} \\
+                    \texttt{\purple{1}01} & \to & \texttt{-1}       \\
+                    \texttt{\purple{1}10} & \to & \texttt{-2}       \\
+                    \texttt{\purple{1}11} & \to & \texttt{-3}       \\
                     \hline
                   \end{array}
                 $$
-                \textit{Sumar normalmente en esta representación no tiene sentido}.
+                \textit{Sumar normalmente en esta representación no tiene sentido}. Representa en total 2$^\texttt{n} - 1$ elementos
+                porque el \red{-0} está usando un lugar al pedo.
 
-          \item \textit{Complemento de 2:}\par
+          \item \hypertarget{teoria-1:complementoA2}{\textit{Complemento de 2:}}\par
                 \begin{itemize}[label=\iconTeoriaTres]
-                  \item Menos intuitivo, pero más útil. Si tengo un número de $n$-bits, voy a tener siempre:
-                        $$
-                          \begin{array}{|rcr|l}
+                  \item Menos intuitivo, pero más útil. Si tengo un número de \texttt{n}-bits, voy a tener siempre:
+                        \begin{center}
+                          \begin{tabular}{|rcr|l}
                             \cline{1-3}
-                            0_{10}           & \to & 00\dots00_2  &                                    \\
-                            -1_{10}          & \to & 11\dots11_2  &                                    \\
-                            -2^{n-1}_{10}    & \to & 100\dots00_2 & \to \textit{\purple{weird number}} \\
-                            2^{n-1} - 1_{10} & \to & 011\dots11_2 &                                    \\
+                            \nBase{0}{10}                      & $\to$ & \nBase{00$\dots$00}{2}  &                                      \\
+                            \nBase{-1}{10}                     & $\to$ & \nBase{11$\dots$11}{2}  &                                      \\
+                            \nBase{$-2^{\texttt{n}-1}$}{10}    & $\to$ & \nBase{100$\dots$00}{2} & $\to$ \textit{\purple{weird number}} \\
+                            \nBase{$2^{\texttt{n}-1} - 1$}{10} & $\to$ & \nBase{011$\dots$11}{2} &                                      \\
                             \cline{1-3}
-                          \end{array}
-                        $$
-                        Teniendo al 0, $-1, \,-2^{n-1} \ytext (2^{n-1} -1)$, puedo encontrar el resto de la \textit{representación}:
+                          \end{tabular}
+                        \end{center}
+                        Teniendo al 0, $-1, \,-2^{\texttt{n}-1} \ytext (2^{
+                            \texttt{n}-1} -1)$, puedo encontrar el resto de la \textit{representación}:
 
-                  \item Para encontrar el opuesto a un número, se cambian los 0 por 1 y vicerveza
-                        \footnote{chiste: vicerveza = 2 \faIcon{beer}. Se escribe viceversa \faIcon{smile}}
+                  \item\hypertarget{teoria-1:weirdNumber}{} Para encontrar el opuesto a un número, se cambian los 0 por 1 y bicerveza
+                        \footnote{chiste: bicerveza = \faIcon{beer}\faIcon{beer}. Se escribe viceversa {\tiny\faIcon{hand-middle-finger}\faIcon{angry}}.}
                         , luego se le suma 1 a eso, ej:
-                        $$
-                          5_{10} = 0101
-                          \flecha{busco}[$-5$] 1010 + 0001 = 1011 = -5_{10}.
-                        $$
-                        Cosa que no funciona con el \purple{\textit{weird number}}, porque su complemento te da a él mismo \faIcon{hat-wizard}.
+                        \begin{center}
+                          \nBase{5}{10} = \nBase{0101}{2}
+                          $\flecha{busco}[$-5$]$
+                          \nBase{1010}{2} + \nBase{0001}{2} = \nBase{1011}{2} = \nBase{-5}{10}.
+                        \end{center}
+                        Cosa que no funciona con el \purple{\textit{weird number}}, porque su complemento te da a él mismo \href{\neverGonnaGiveYouUp}{\faIcon{hat-wizard}}.
 
-                  \item El rango es de $[-2^{n-1}, 2^{n-1} -1],\,2^n$ elementos. Hay un elemento negativo más que positivos.
+                  \item El rango es de $[-2^{\texttt{n}-1}, 2^{\texttt{n}-1} -1],\,2^{\texttt{n}}$ elementos. Hay un elemento negativo más que positivos.
 
-                  \item Ejemplito: En 3-bits me encuentro todo el conjunto, $[-4, 3]$:
-                        $$
-                          \begin{array}{|rcr|}
+                  \item Ejemplito: En 3-bits me encuentro todo el conjunto, $[-4, 3]$:\par
+                        \begin{center}
+                          \begin{tabular}{|rcr|}
                             \hline
-                            000 & \to & 0_{10}  \\
-                            001 & \to & 1_{10}  \\
-                            010 & \to & 2_{10}  \\
-                            011 & \to & 3_{10}  \\
-                            100 & \to & -4_{10} \\
-                            101 & \to & -3_{10} \\
-                            110 & \to & -2_{10} \\
-                            111 & \to & -1_{10} \\
+                            \nBase{000}{2} & $\to$ & \nBase{0}{10}  \\
+                            \nBase{001}{2} & $\to$ & \nBase{1}{10}  \\
+                            \nBase{010}{2} & $\to$ & \nBase{2}{10}  \\
+                            \nBase{011}{2} & $\to$ & \nBase{3}{10}  \\
+                            \nBase{100}{2} & $\to$ & \nBase{-4}{10} \\
+                            \nBase{101}{2} & $\to$ & \nBase{-3}{10} \\
+                            \nBase{110}{2} & $\to$ & \nBase{-2}{10} \\
+                            \nBase{111}{2} & $\to$ & \nBase{-1}{10} \\
                             \hline
-                          \end{array}
-                        $$
+                          \end{tabular}
+                        \end{center}
 
+                  \item \textit{Suma en complemento de 2:}
+                        Si sumo dos números de distinto signo no voy a tener \textit{\red{overflow}}!
+                        \begin{center}
+                          4 bits:
+                          \nBase{-4}{10} + \nBase{5}{10} =
+                          \nBase{1100}{2} + \nBase{0101}{2} =
+                          \nBase{$\cancel{\texttt{1}}$0001}{2} = \nBase{1}{10}\par
+                        \end{center}
+
+                  \item \textit{Sign extension:}
+                        Para encontrar la representación de un número conocido con más bits.\par
+                        Copio el signo al resto de los númerosengo que mandar el bit del signo
+                        hacia el dígito más significativo, :
+
+                        \begin{center}
+                          4 bits: \nBase{6}{10} = \nBase{0110}{2} y \nBase{-5}{10} = \nBase{1011}{2}\par
+                          Extendido a 8 bits: \nBase{6}{10} = \nBase{(0000 0110)}{2} y \nBase{-5}{10} = \nBase{(1111 1011)}{2}\par
+                        \end{center}
                 \end{itemize}
         \end{itemize}
-
 \end{itemize}

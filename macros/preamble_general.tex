@@ -1,10 +1,11 @@
-\documentclass[12pt,a4paper, spanish]{article}
+\documentclass[12pt,a4paper, spanish, twoside]{article}
 
 \usepackage[headheight=110pt, top = 2cm, bottom = 2cm, left=1cm, right=1cm]{geometry} %modifico márgenes
 \usepackage[T1]{fontenc} % tildes
 \usepackage[utf8]{inputenc} % Para poder escribir con tildes en el editor.
 \usepackage[english]{babel} % Para cortar las palabras en silabas, creo.
 \usepackage[ddmmyyyy]{datetime}
+\usepackage{titlesec} % para editar titulos y hacer secciones con formato a medida
 \usepackage{amsmath} % Soporte de mathmatics
 \usepackage{mathtools} % Más herramientas para matemáctica
 \usepackage{amssymb} % fuentes de mathmatics
@@ -13,13 +14,35 @@
 \usepackage[dvipsnames]{xcolor} % Para colorear el texto: black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
 \usepackage{graphicx} % Necesario para poner imagenes
 \usepackage{enumitem} % Cambiar labels y más flexibilidad para el enumerate
-\usepackage{multicol} 
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{skull} % símbolos de donde uso Skull
 \usepackage{tikz} % para graficar
 \usepackage{fontawesome5} % fuentes "extras"
 \usepackage{bbding} % símbolos de donde uso FiveStar
-\usepackage{xcolor} % símbolos de donde uso FiveStar
-\usetikzlibrary{circuits.ee.IEC} % elementos de electrónica
+\usepackage{lipsum} % símbolos de donde uso FiveStar
 
 % para hacer los graficos tipo grafos
 \usetikzlibrary{shapes,arrows.meta, chains, matrix, calc, trees, positioning, fit}
 \usetikzlibrary{external}
+
+\usepackage{fancyhdr} % Encabezados y pie de páginas
+
+% En general quiero que este paquete sea el último en importarse
+\usepackage{hyperref} % para que haya links navegables en el PDF
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  %filecolor=magenta,
+  urlcolor=OliveGreen!90!black,
+  pdftitle={Sistemas Digitales 2C 2024},
+  pdfauthor={NadGarraz y comunidad}
+}
+\urlstyle{same}
+
+\setlength{\parindent}{0pt} % Para que no haya indentación en las nuevas líneas.
+
+%% Info SOCIAL
+\def\dirRepo{https://github.com/nad-garraz/sistemasDigitales}
+\def\dirTelegram{https://t.me/+X4p0xKnXp0Y3ZThh}
+
