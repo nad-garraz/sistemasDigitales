@@ -1,3 +1,34 @@
 \begin{enunciado}{\ejercicio}
-\hacer
+
+%Enunciado
+Dar ocho pares de numeros tales que la suma de las representaciones de cada
+par en complemento a dos de 4 bits provoque lo siguiente
+\begin{enumerate}
+    \item No se produzca acarreo ni overflow.
+    \item Se produzca acarreo pero no overflow.
+    \item Se produzca acarreo y overflow.
+    \item No se produzca acarreo pero si overflow.
+    \item Se produzca acarreo y el resultado sea cero.
+    \item No se produzca acarreo y el resultado sea cero.
+    \item El resultado sea negativo y se produzca overflow.
+    \item El resultado sea negativo y no se produzca overflow.
+
+
+\end{enumerate}
+%Fin del enunciado
+
+Respuestas: 
+
+\begin{enumerate}
+    \item $(0000, 0000)$
+    \item $(0001, 0001)$
+    \item $(1111, 1111)$
+    \item $(1111, 1111)$
+    \item $(0001, 1111)$
+    \item $(0000, 0000)$
+    \item $(1111, 1111)$
+    \item $(1111, 0000)$
+
+
+\end{enumerate}
 \end{enunciado}
