@@ -76,7 +76,7 @@
         Hay distintas \textit{representaciones} para hacer esto, acá están las 2 más usadas:
         \begin{itemize}[label=\iconTeoriaDos]
 
-          \item \textit{Signo $\big/$ magnitud:}\par
+          \item \sigMag\par
                 El bit más significativo, el de más a la izquierda, marca el \purple{signo}.
                 Un número con \texttt{n} bits en esta representación tiene un rango: $[-2^{\texttt{n}-1}+1, 2^{\texttt{n}-1} - 1]$.
                 Por ejemplo con 3-bits:\par
@@ -157,11 +157,38 @@
                         Para encontrar la representación de un número conocido con más bits.\par
                         Copio el signo al resto de los númerosengo que mandar el bit del signo
                         hacia el dígito más significativo, :
-
                         \begin{center}
-                          4 bits: \nBase{6}{10} = \nBase{0110}{2} y \nBase{-5}{10} = \nBase{1011}{2}\par
+                          {\tt 4 bits: \nBase{6}{10} = \nBase{0110}{2} y \nBase{-5}{10} = \nBase{1011}{2}}\par
                           Extendido a 8 bits: \nBase{6}{10} = \nBase{(0000 0110)}{2} y \nBase{-5}{10} = \nBase{(1111 1011)}{2}\par
                         \end{center}
                 \end{itemize}
         \end{itemize}
+  \item \texttt{Exceso m:}
+        \begin{itemize}[label=\iconTeoriaTres]
+
+          \item Se desplaza el \texttt{0} a la posición \texttt{m}. Es así que si la representación es
+                \texttt{exceso 4} en \texttt{6-bits} base 3: \nBase{0}{10} = \nBase{(000 0011)}{3}
+        \end{itemize}
+
+  \item \textit{Comparación representaciones del mismo} \magenta{\texttt{Dato}}:\par
+        \ttfamily\begin{tabular}{|c||c|c|c|c|c|}
+          \hline
+          Posición & \magenta{Dato}    & unsigned  & \sigMag   & Exceso m (m=4) & \compDos  \\ \hline \hline
+          0        & \nBase{(0000)}{2} & \blue{0}  & \red{0}   & -4             & \blue{0}  \\ \hline
+          1        & \nBase{(0001)}{2} & 1         & 1         & -3             & 1         \\ \hline
+          2        & \nBase{(0010)}{2} & 2         & 2         & -2             & 2         \\ \hline
+          3        & \nBase{(0011)}{2} & 3         & 3         & -1             & 3         \\ \hline
+          4        & \nBase{(0100)}{2} & 4         & 4         & \yellow{0}     & 4         \\ \hline
+          5        & \nBase{(0101)}{2} & 5         & 5         & 1              & 5         \\ \hline
+          6        & \nBase{(0110)}{2} & 6         & 6         & 2              & 6         \\ \hline
+          7        & \nBase{(0111)}{2} & 7         & \blue{7}  & 3              & \blue{7}  \\ \hline
+          8        & \nBase{(1000)}{2} & 8         & \red{-0}  & 4              & \blue{-8} \\ \hline
+          9        & \nBase{(1001)}{2} & 9         & -1        & 5              & -7        \\ \hline
+          10       & \nBase{(1010)}{2} & 10        & -2        & 6              & -6        \\ \hline
+          11       & \nBase{(1011)}{2} & 11        & -3        & 7              & -5        \\ \hline
+          12       & \nBase{(1100)}{2} & 12        & -4        & 8              & -4        \\ \hline
+          13       & \nBase{(1101)}{2} & 13        & -5        & 9              & -3        \\ \hline
+          14       & \nBase{(1110)}{2} & 14        & -6        & 10             & -2        \\ \hline
+          15       & \nBase{(1111)}{2} & \blue{15} & \blue{-7} & \blue{11}      & -1        \\ \hline
+        \end{tabular}
 \end{itemize}
