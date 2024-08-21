@@ -1,0 +1,50 @@
+\begin{enunciado}{\ejercicio}
+  %Enunciado
+  Dar ocho pares de numeros tales que la suma de las representaciones de cada
+  par en complemento a dos de 4 bits provoque lo siguiente:
+
+  \begin{enumerate}[label=\arabic*)]
+    \item No se produzca acarreo ni \overflow.
+    \item Se produzca acarreo pero no \overflow.
+    \item Se produzca acarreo y \overflow.
+    \item No se produzca acarreo pero si \overflow.
+    \item Se produzca acarreo y el resultado sea cero.
+    \item No se produzca acarreo y el resultado sea cero.
+    \item El resultado sea negativo y se produzca \overflow.
+    \item El resultado sea negativo y no se produzca \overflow.
+  \end{enumerate}
+\end{enunciado}
+
+\begin{enumerate}[label=\arabic*)]
+  \item \nBase{(0000, 0000)}{2}
+  \item \nBase{(0001, 0001)}{2}
+  \item\label{ej-9-1:item3} \nBase{(1111, 1111)}{2}
+  \item \nBase{(1000, 1111)}{2}
+  \item \nBase{(0001, 1111)}{2}
+  \item \nBase{(0000, 0000)}{2}
+  \item\label{ej-9-1:item7} \nBase{(1111, 1111)}{2}
+  \item \nBase{(1111, 0000)}{2} o \nBase{(1111, 1001)}{2} o \nBase{(1111, 1100)}{2}
+
+        Nota: Los incisos \ref{ej-9-1:item3} y \ref{ej-9-1:item7} están mal. Los dejamos ahí para
+        testearte \href{\ariane5}{y hacerte saber que lograste esto \faIcon{hands-clapping}}.\par
+
+        Cuando usamos la representación que usemos, el overflow tiene que ver con el sentido que le damos
+        a cierto número. Por ejemplo:\par
+
+        \begin{tabular}{rcr}
+          \texttt{Acarreo} &     & \nBase{\purple{111111\ }}{\ }        \\
+                           &     & \nBase{100001}{2}                    \\
+                           & $+$ & \nBase{011111}{2}                    \\ \cline{2-3}
+                           &     & \nBase{\purple{1}00000\purple{0}}{2}
+        \end{tabular}
+        Acabo de hacer \nBase{-7}{10} + \nBase{7}{10} = \nBase{0}{10}, el \texttt{bit} más significativo que supera la cantidad de
+        bits de mi cuenta se descarta y el resultado es coherente con mi represntación. No hay \overflow.
+
+\end{enumerate}
+
+% Contribuciones
+\begin{aportes}
+  %\aporte{url}{nombre icono}
+  \item \aporte{https://github.com/misProyectosPropios}{Iñaki Frutos \github}
+  \item \aporte{\dirRepo}{Nad Garraz \github}
+\end{aportes}
