@@ -53,6 +53,27 @@
   }
 }
 
+
+% Contributors
+\newcommand{\aporte}[2]{
+        \href{#1}{#2}
+}
+
+\newenvironment{aportes}{
+\vspace{10pt}
+\begin{minipage}{1\linewidth}
+  \tt\footnotesize
+  Visitá los repos y estrellalos \yellow{\FiveStar}! Gracias por tu aporte:
+\vspace{-10pt}
+  \begin{multicols}{3}
+  \begin{itemize}[label={\tiny\yellow{\faIcon{medal}}}]
+      }{
+    \end{itemize}
+  \end{multicols}
+\end{minipage}
+}
+
+
 % Update time
 \def\update{\tiny
   {\today\ @ \currenttime}
