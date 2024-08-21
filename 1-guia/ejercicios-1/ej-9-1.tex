@@ -33,10 +33,10 @@ Cuando usamos la representación que usemos, el \overflow tiene que ver con el s
 a cierto número. Por ejemplo:\par
 
 \begin{tabular}{rcr}
-  \texttt{Acarreo} &     & \nBase{\purple{111111\ }}{\ }        \\
-                   &     & \nBase{100001}{2}                    \\
-                   & $+$ & \nBase{011111}{2}                    \\ \cline{2-3}
-                   &     & \nBase{\purple{1}00000\purple{0}}{2}
+  \texttt{Acarreo} &     & \nBase{\purple{\ 11111\ }}{\ } \\
+                   &     & \nBase{100001}{2}              \\
+                   & $+$ & \nBase{011111}{2}              \\ \cline{2-3}
+                   &     & \nBase{100000\purple{0}}{2}
 \end{tabular}
 Acabo de hacer \nBase{-7}{10} + \nBase{7}{10} = \nBase{0}{10}, el \texttt{bit} más significativo que supera la cantidad de
 bits de mi cuenta se descarta y el resultado es coherente con mi represntación. No hay \overflow.
