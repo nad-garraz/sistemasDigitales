@@ -1,3 +1,71 @@
 \begin{enunciado}{\ejercicio}
-\hacer
+  La función \nBase{SignExt}{n} convierte números de \texttt{k-bits} en números de \texttt{k+n-bits} de la
+  siguiente manera:
+  \begin{center}
+    \nBase{SignExt}{n}(\nBase{b}{k-1}...\nBase{b}{0}) = $\llave{lll}{
+        \tt 0...0$\nBase{b}{k-1}$...$\nBase{b}{0}$ & \texttt{ si } & $\nBase{b}{k-1}$ = 0 \\
+        \tt 1...1$\nBase{b}{k-1}$...$\nBase{b}{0}$ & \texttt{ si } & $\nBase{b}{k-1}$ = 1
+      }$
+  \end{center}
+  Mostrar que para todo número \texttt{x} de \texttt{k-bits}, \texttt{x} y \nBase{SingExt}{n}\texttt{(x)} representan el mismo número si
+  se los interpreta en notación \compDos de \texttt{k} y \texttt{k+n-bits} respectivamente.
 \end{enunciado}
+
+Esto está no demostrado en las \hyperlink{teoria-1:complementoA2}{notas teóricas de \compDos}.
+Si estoy laburando en \compDos voy a tener que el \nBase{0}{10} se representa para \texttt{k-bits} y \texttt{k-bits + n} como:
+\begin{center}
+  \tt
+  \begin{tabular}{ccc}
+    base10        & k-bits                                                & k-bits + n                                                                                      \\
+    \nBase{0}{10} & \nBase{($\ub{\mathtt{\cyan{0...0}}}{\texttt{k}}$)}{2} & \nBase{($\ub{\mathtt{\magenta{0...0}}}{\texttt{n}}\ub{\mathtt{\cyan{0...0}}}{\texttt{k}}$)}{2},
+  \end{tabular}
+\end{center}
+al \nBase{-1}{10} lo represento como:
+\begin{center}
+  \tt
+  \begin{tabular}{ccc}
+    base10         & k-bits                    & k-bits + n                                \\
+    \nBase{-1}{10} & \nBase{(\cyan{1...1})}{2} & \nBase{(\magenta{1...1}\cyan{1...1})}{2},
+  \end{tabular}
+\end{center}
+el mayor número de la representacion también en \compDos:
+\begin{center}
+  \tt
+  \begin{tabular}{ccc}
+    base10                             & k-bits                     & k-bits + n                                 \\
+    \nBase{(2$^{\texttt{k}}$ - 1)}{10} & \nBase{(\cyan{01...1})}{2} & \nBase{(\magenta{0...0}\cyan{01...1})}{2},
+  \end{tabular}
+\end{center}
+
+y el menor número de la representacion \compDos también como:\par
+
+\begin{center}
+  \tt
+  \begin{tabular}{ccc}
+    base10                          & k-bits                     & k-bits + n                                 \\
+    \nBase{(-2$^{\mathtt{k}}$)}{10} & \nBase{(\cyan{10...0})}{2} & \nBase{(\magenta{l...1}\cyan{10...0})}{2},
+  \end{tabular}
+\end{center}
+
+La verdad que no creo que esto sea una demostración pero voy a asumir que es trivial que para números positivos:
+\begin{center}
+  \tt
+  \nBase{x}{n} = \nBase{SignExt}{n}(x) si \nBase{x}{n} > 0,
+\end{center}
+porque solo son \nBase{0s}{} a la izquierda. Y para los negativos podría buscarles el opuesto:
+\begin{center}
+  \tt
+  \begin{tabular}{cccc}
+    base10     & \nBase{x}{10} < 0                         & $\flecha{opuesto}$ & \nBase{x}{10} > 0                                                                                \\
+    k-bits     & \nBase{(\cyan{1b...b})}{2}                & $\flecha{opuesto}$ & \nBase{(\cyan{0$\neg$b...$\neg$b})}{2} + \nBase{(\cyan{0...1})}{2}                               \\
+    k-bits + n & \nBase{(\magenta{1...1}\cyan{1b...b})}{2} & $\flecha{opuesto}$ & \nBase{(\magenta{0...0}\cyan{0$\neg$b...$\neg$b})}{2} + \nBase{(\magenta{0...0}\cyan{0...1})}{2}
+  \end{tabular}
+\end{center}
+La suma en la parte \cyan{cyan} para los números positivos me va a dar lo mismo. Por lo tanto bajo la \textit{conjetura que hice} de que para los positivos
+es trivial la igualdad \nBase{x}{n} \texttt{=} \nBase{SignExt}{n}(x) me muestra que también los negativos son iguales después de aplicarles la extensión de signo.
+
+% Contribuciones
+\begin{aportes}
+  %\aporte{url}{nombre icono}
+  \item \aporte{\dirRepo}{Nad Garraz \github}
+\end{aportes}
