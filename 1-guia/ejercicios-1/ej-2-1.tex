@@ -43,7 +43,7 @@
                 & \nBase{111111}{2}
           \end{tabular}
 
-    \item
+    \item\label{ej-2:itemB}
           \begin{tabular}{rrr}
             \texttt{Acarreo} &     & \nBase{\purple{11111\ }}{\ }        \\
                              &     & \nBase{100001}{2}                    \\
@@ -58,7 +58,7 @@
                 & \nBase{AAAA}{2}
           \end{tabular}
 
-    \item
+  \item\label{ej-2:itemD}
           \begin{tabular}{rcl}
             \texttt{Acarreo} &     & \nBase{\purple{\ \ 1}}{} \\
                              &     & \nBase{\ F0F0}{2}         \\
@@ -67,7 +67,9 @@
           \end{tabular}
   \end{enumerate}
 \end{multicols}
-\red{Precisión fija? Tengo \overflow en el b y en el d? Se tira el decimal de más? Cómo se expresa el resultado?}
+La precisión fija y la representación \sigMag al tener el acarreo que agrega un bit
+ generan \overflow.
+ Los resultados de los items  \ref{ej-2:itemB} y \ref{ej-2:itemD} no tienen representación en \sigMag.
 
 % Contribuciones
 \begin{aportes}
