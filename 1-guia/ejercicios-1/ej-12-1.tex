@@ -1,3 +1,44 @@
 \begin{enunciado}{\ejercicio}
-\hacer
+  Diremos que un sistema de representación de números como
+  cadenas binarias de longitud fija es \texttt{biyectivo} si no admite
+  más de una representación para cada número y toda cadena disponible
+  es utilizada para representar algún número.\par
+  Decidir si la siguiente afirmación es verdadera o falsa:
+  \begin{center}
+    "No es posible dar con un sistema que represente números
+    con signo utilizando cadenas binarias de longitud fija que sea
+    \texttt{biyectivo}, tenga una representación para el cero y donde
+    la cantidad de números positivos y negativos representados sea la misma".
+    Justificar.
+  \end{center}
 \end{enunciado}
+
+Esto buscando algo de esta pinta:
+\begin{center}
+  \ttfamily\begin{tabular}{|c|c|c|c|}
+    \hline
+    Posición & \magenta{Dato}   & casi 1 & casi 2 \\ \hline \hline
+    0        & \nBase{(000)}{2} & -3     & -4     \\ \hline
+    1        & \nBase{(001)}{2} & -2     & -3     \\ \hline
+    2        & \nBase{(010)}{2} & -1     & -2     \\ \hline
+    3        & \nBase{(011)}{2} & 0      & -1     \\ \hline
+    4        & \nBase{(100)}{2} & 1      & 0      \\ \hline
+    5        & \nBase{(101)}{2} & 2      & 1      \\ \hline
+    6        & \nBase{(110)}{2} & 3      & 2      \\ \hline
+    7        & \nBase{(111)}{2} & 4      & 3      \\ \hline
+  \end{tabular}
+\end{center}
+
+Y está complicado porque tengo que usar de $\mathtt{2}^\mathtt{n}$ elementos
+Uno para el cero, por lo que quedan:
+
+\begin{center}
+  {\tt $\mathtt{2}^{\mathtt{n}}$ = 2$^\mathtt{n}$ - 1 $\to$ 2$^\mathtt{n}$ - 1 mod 2 $\not=$ 0}
+\end{center}
+luego no podría tener igual cantidad de números positivos y negativos.
+
+% Contribuciones
+\begin{aportes}
+  %\aporte{url}{nombre icono}
+  \item \aporte{\dirRepo}{Nad Garraz \github}
+\end{aportes}

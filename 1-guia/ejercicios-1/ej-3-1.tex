@@ -1,5 +1,41 @@
 \begin{enunciado}{\ejercicio}
   ¿Puede suceder en alguna base que la suma de dos números de precisión fija
   tenga un acarreo mayor que 1?
-        Exhibir un ejemplo o demostrar lo contrario.
+  Exhibir un ejemplo o demostrar lo contrario.
 \end{enunciado}
+
+En cualquier base \texttt{B} se da que el último símbolo que puede reprentar es
+\nBase{B-1}{}. Entonces cuando se sumen 2 dígitos:
+\begin{center}
+  \tt
+  \begin{tabular}{r}
+    B - 1 \\
+    B - 1 \\ \hline
+    2B -2
+  \end{tabular}
+\end{center}
+
+La expresión de un número en base \texttt{B} que tiene un 2 de peso:
+\begin{center}
+  \tt
+  x = 2 B$^\mathtt{n+1}$,
+\end{center}
+y otro que tiene como peso a la suma de los mayores pesos de la base:
+\begin{center}
+  \tt
+  y = (2B - 2) B$^\mathtt{n}$
+\end{center}
+Pero, pero, pero:
+\begin{center}
+  \tt
+  2 B$^\mathtt{n+1}$ $\stackrel{\mathtt{?}}{\geq}$ (2B - 2) B$^\mathtt{n}$\par
+  0 $\stackrel{\mathtt{\checkmark}}{\geq}$  - 2 B$^\mathtt{n}$
+\end{center}
+
+Por lo que se estaría complicando para el \texttt{team acarreo mayor a 1}
+
+% Contribuciones
+\begin{aportes}
+  %\aporte{url}{nombre icono}
+  \item \aporte{\dirRepo}{Nad Garraz \github}
+\end{aportes}

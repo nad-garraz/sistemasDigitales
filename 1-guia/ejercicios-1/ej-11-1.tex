@@ -1,13 +1,13 @@
 \begin{enunciado}{\ejercicio}
   %Enunciado
-  Represente los numeros \nBase{2}{10}, \nBase{-5}{10} y \nBase{0}{10} en notacion complemento a dos de 4 bits de
+  Represente los números \nBase{2}{10}, \nBase{-5}{10} y \nBase{0}{10} en notación \compDos de \nBase{4-bits}{} de
   longitud. Luego:
 
-  \begin{enumerate}[label=(\alph*)]
-    \item invierta los bits de cada representacion obtenida e indique a que numero representa en
-          el mismo sistema;
-    \item a partir de lo realizado en el punto anterior, proponga un metodo para obtener la representacion en
-          complemento a 2 del inverso aditivo de un numero dada la representacion de ese numero en el mismo
+  \begin{enumerate}[label=\alph*)]
+    \item Invierta los bits de cada representación obtenida e indique a que número representa en
+          el mismo sistema.
+    \item A partir de lo realizado en el punto anterior, proponga un método para obtener la representación en
+          \compDos del inverso aditivo de un número, dada la representación de ese número en el mismo
           sistema.
   \end{enumerate}
 \end{enunciado}
@@ -16,24 +16,24 @@
   \item \begin{itemize}
           \item \nBase{2}{10}
                 \begin{itemize}
-                  \item Complemento a dos: \nBase{0010}{2} \red{Se necesitan 3 digitos, porque con 2, solamente se podrían representar 4 numeros en total, siendo el 1 el maximo numero posible a represntar}
-                  \item Inverso de la representacion obtenida: \nBase{1101}{2} =  \nBase{-3}{10}
+                  \item \compDos: \nBase{0010}{2} \red{Se necesitan 3 digitos, porque con 2, solamente se podrían representar 4 numeros en total, siendo el 1 el maximo numero posible a represntar}
+                  \item Inverso de la representación obtenida: \nBase{1101}{2} = \nBase{-3}{10}
                 \end{itemize}
           \item \nBase{-5}{10}
                 \begin{itemize}
                   \item Complemento a dos: \nBase{1011}{2}
-                  \item Inverso de la representacion obtenida: \nBase{0100}{2} =  \nBase{4}{10}
+                  \item Inverso de la representación obtenida: \nBase{0100}{2} =  \nBase{4}{10}
                 \end{itemize}
           \item \nBase{0}{10}
                 \begin{itemize}
                   \item Complemento a dos: \nBase{0000}{2}
-                  \item Inverso de la representacion obtenida: \nBase{1111}{2} =  \nBase{-1}{10}
+                  \item Inverso de la representación obtenida: \nBase{1111}{2} =  \nBase{-1}{10}
                 \end{itemize}
         \end{itemize}
-  \item Metodo para obtener el inversor aditivo:
+  \item Método para obtener el inverso aditivo:
         \begin{itemize}
-          \item Buscar el inverso del numero
-          \item Sumar uno al inverso del numero
+          \item Buscar el inverso del número
+          \item Sumar uno al inverso del número
         \end{itemize}
 \end{enumerate}
 
