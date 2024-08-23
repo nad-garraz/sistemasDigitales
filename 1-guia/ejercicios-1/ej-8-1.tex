@@ -1,10 +1,10 @@
 \begin{enunciado}
-	{\ejercicio} ¿Cómo acomodaría esta suma de números \texttt{hexadecimales} de 4
-	dígitos en notación \compDos, para que en ningún momento se produzca \overflow?
-	\begin{center}
-		\tt \nBase{7744}{16} + \nBase{5499}{16} + \nBase{6788}{16} + \nBase{AB68}{16}
-		+ \nBase{88BD}{16} + \nBase{9878}{16} = \nBase{0003}{16}
-	\end{center}
+  {\ejercicio} ¿Cómo acomodaría esta suma de números \texttt{hexadecimales} de 4
+  dígitos en notación \compDos, para que en ningún momento se produzca \overflow?
+  \begin{center}
+    \tt \nBase{7744}{16} + \nBase{5499}{16} + \nBase{6788}{16} + \nBase{AB68}{16}
+    + \nBase{88BD}{16} + \nBase{9878}{16} = \nBase{0003}{16}
+  \end{center}
 \end{enunciado}
 
 Dado que sabemos la suma de un número positivo y un número negativo nunca puede resultar
@@ -15,30 +15,36 @@ No hace falta pasar a binario para poder fijarse el signo de cada uno. En un
 número hexadecimal, si el digito más significativo está en el rango $[8;F]$ podemos
 asegurar que es un número negativo. Caso contrario será un número positivo.
 \begin{center}
-	\begin{multicols}{3}
-		\begin{tabular}{rl}
-			    & \nBase{7744}{16} \\
-			$+$ & \nBase{88BD}{16} \\
-			\hline
-			    & \nBase{0001}{16}
-		\end{tabular}
+  \begin{multicols}{3}
+    \begin{tabular}{rl}
+          & \nBase{7744}{16} \\
+      $+$ & \nBase{88BD}{16} \\
+      \hline
+          & \nBase{0001}{16}
+    \end{tabular}
 
-		\begin{tabular}{rl}
-			    & \nBase{5499}{16} \\
-			$+$ & \nBase{AB68}{16} \\
-			\hline
-			    & \nBase{0001}{16}
-		\end{tabular}
+    \begin{tabular}{rl}
+          & \nBase{5499}{16} \\
+      $+$ & \nBase{AB68}{16} \\
+      \hline
+          & \nBase{0001}{16}
+    \end{tabular}
 
-		\begin{tabular}{rl}
-			    & \nBase{6788}{16} \\
-			$+$ & \nBase{9878}{16} \\
-			\hline
-			    & \nBase{0001}{16}
-		\end{tabular}
-	\end{multicols}
-	Y bueno por último...
-	\begin{center}
-		$0001_{16}+0001_{16}+0001_{16}= 0003_{16}$
-	\end{center}
+    \begin{tabular}{rl}
+          & \nBase{6788}{16} \\
+      $+$ & \nBase{9878}{16} \\
+      \hline
+          & \nBase{0001}{16}
+    \end{tabular}
+  \end{multicols}
+  Y bueno por último...
+  \begin{center}
+    $0001_{16}+0001_{16}+0001_{16}= 0003_{16}$
+  \end{center}
 \end{center}
+
+% Contribuciones
+\begin{aportes}
+  %\aporte{url}{nombre icono}
+  \item \aporte{https://github.com/rorofino10}{Román O. \github}
+\end{aportes}
