@@ -1,0 +1,101 @@
+\newcommand{\AND}[3]{
+  \begin{circuitikz}[scale=0.3, transform shape]
+    \draw (0,0) node[ieeestd and port] (AND1){};% pongo el componente en el (0,0)
+    \draw (AND1.in 1) -- ++(-1pt,0) node[left] {#1}; % input 1, el de arriba, relativo
+    \draw (AND1.in 2) -- ++(-1pt,0) node[left] {#2}; % input 2, el de abajo, relativo
+    \draw (AND1.out) -- ++ (1pt,0) node[right] {#3}; % output, relativo
+  \end{circuitikz}
+}
+
+\newcommand{\OR}[3]{
+  \begin{circuitikz}[scale=0.3, transform shape]
+    \draw (0,0) node[ieeestd or port] (OR1){};% pongo el componente en el (0,0)
+    \draw (OR1.in 1) -- ++(-1pt,0) node[left] {#1}; % input 1, el de arriba, relativo
+    \draw (OR1.in 2) -- ++(-1pt,0) node[left] {#2}; % input 2, el de abajo, relativo
+    \draw (OR1.out) -- ++ (1pt,0) node[right] {#3}; % output, relativo
+  \end{circuitikz}
+}
+
+\newcommand{\distributivaUno}[2]{
+  \begin{circuitikz}[scale=0.25, transform shape, every node/.style={font=\ttfamily}]
+    \ctikzset{logic ports=ieee}
+    \draw (0,0) node[#1 port] (componente1){};% pongo el componente en el (0,0)
+    \draw (-2.5,-0.5) node[#2 port] (componente2){};% pongo el componente en el (0,0)
+    \draw (componente2.in 1) node[left] {B};
+    \draw (componente2.in 2) node[left] {C};
+    \draw (componente1.in 1) |- ++(-2.5,0) node[left] {A}; % input 1, el de arriba, relativo
+    \draw (componente1.in 2) |- (componente2.out) node[left] {}; % input 2, el de abajo, relativo
+    \draw (componente1.out) |- ++(0.5,0) node[right] {Y}; % input 2, el de abajo, relativo
+  \end{circuitikz}
+}
+
+\newcommand{\distributivaDos}[2]{
+  \begin{circuitikz}[scale=0.25, transform shape, , every node/.style={font=\ttfamily}]
+    \ctikzset{logic ports=ieee}
+    \draw (0,0) node[ieeestd #1 port] (componente3){};% pongo el componente en el (0,0)
+    \draw (-2.5,1) node[ieeestd #2 port] (componente1){};% pongo el componente en el (0,0)
+    \draw (-2.5,-1) node[ieeestd #2 port] (componente2){};% pongo el componente en el (0,0)
+    \draw (componente1.in 1) node[left] {A};
+    \draw (componente1.in 2) node[left] {B};
+    \draw (componente2.in 1) node[left] {A};
+    \draw (componente2.in 2) node[left] {C};
+    \draw (componente1.out) |- (componente3.in 1); % input 1, el de arriba, relativo
+    \draw (componente2.out) |- (componente3.in 2); % input 2, el de abajo, relativo
+    \draw (componente3.out) node[right] {Y}; % input 2, el de abajo, relativo
+  \end{circuitikz}
+}
+
+\newcommand{\asociaUno}[2]{
+  \begin{circuitikz}[scale=0.25, transform shape, every node/.style={font=\ttfamily}]
+    \ctikzset{logic ports=ieee}
+    \draw (0,0) node[#1 port] (componente1){};% pongo el componente en el (0,0)
+    \draw (-2.5,-0.5) node[#2 port] (componente2){};% pongo el componente en el (0,0)
+    \draw (componente2.in 1) node[left] {B};
+    \draw (componente2.in 2) node[left] {C};
+    \draw (componente1.in 1) |- ++(-2.5,0.5) node[left] {A}; % input 1, el de arriba, relativo
+    \draw (componente1.in 2) |- (componente2.out) node[left] {}; % input 2, el de abajo, relativo
+    \draw (componente1.out) |- ++(0.5,0) node[right] {Y}; % input 2, el de abajo, relativo
+  \end{circuitikz}
+}
+\newcommand{\asociaDos}[2]{
+  \begin{circuitikz}[scale=0.25, transform shape, every node/.style={font=\ttfamily}]
+    \ctikzset{logic ports=ieee}
+    \draw (0,0) node[#1 port] (componente1){};% pongo el componente en el (0,0)
+    \draw (-2.5,0.5) node[#2 port] (componente2){};% pongo el componente en el (0,0)
+    \draw (componente2.in 1) node[left] {A};
+    \draw (componente2.in 2) node[left] {B};
+    \draw (componente1.in 2) |- ++(-2.5,-0.5) node[left] {C}; % input 1, el de arriba, relativo
+    \draw (componente1.in 1) |- (componente2.out) node[right] {}; % input 2, el de abajo, relativo
+    \draw (componente1.out) |- ++(0.5,0) node[right] {Y}; % input 2, el de abajo, relativo
+  \end{circuitikz}
+}
+
+\newcommand{\absorcion}[2]{
+  \begin{circuitikz}[scale=0.25, transform shape, every node/.style={font=\ttfamily}]
+    \ctikzset{logic ports=ieee}
+    \draw (0,0) node[#1 port] (componente1){};% pongo el componente en el (0,0)
+    \draw (-2.5,-0.5) node[#2 port] (componente2){};% pongo el componente en el (0,0)
+    \draw (componente2.in 1) node[left] {A};
+    \draw (componente2.in 2) node[left] {B};
+    \draw (componente1.in 1) |- ++(-2.5,0) node[left] {A}; % input 1, el de arriba, relativo
+    \draw (componente1.in 2) |- (componente2.out) node[left] {}; % input 2, el de abajo, relativo
+    \draw (componente1.out) |- ++(0.5,0) node[right] {A}; % input 2, el de abajo, relativo
+  \end{circuitikz}
+}
+
+\newcommand{\morganUno}[1]{
+  \begin{circuitikz}[scale=0.3, transform shape]
+    \draw (0,0) node[ieeestd #1 port] (componente){};% pongo el componente en el (0,0)
+    \draw (componente.in 1) -- ++(-1pt,0) node[left] {A}; % input 1, el de arriba, relativo
+    \draw (componente.in 2) -- ++(-1pt,0) node[left] {B}; % input 2, el de abajo, relativo
+  \end{circuitikz}
+}
+\newcommand{\morganDos}[1]{
+  \begin{circuitikz}[scale=0.3, transform shape]
+    \draw (0,0) node[ieeestd #1 port] (componente){};% pongo el componente en el (0,0)
+    \draw (componente.in 1) -- ++(-4pt,0) node[left] {A}; % input 1, el de arriba, relativo
+    \draw (componente.in 2) -- ++(-4pt,0) node[left] {B}; % input 2, el de abajo, relativo
+    \node [notcirc, right=4pt] at (componente.in 1){};
+    \node [notcirc, right=4pt] at (componente.in 2){};
+  \end{circuitikz}
+}
