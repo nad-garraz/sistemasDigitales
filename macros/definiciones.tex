@@ -1,20 +1,21 @@
 %misc
 \def\ytext{\quad \text{y} \quad}
 \DeclareMathOperator{\X}{\text{x}}
+\newcommand{\negado}[1]{$\overline{\mathtt{#1}}$}
 \newcommand{\nBase}[2]{\texttt{#1}$_{\texttt{#2}}$}
 \newcommand{\sigMag}{\texttt{signo+magnitud} }
 \newcommand{\compDos}{\texttt{complemento a 2} }
 \newcommand{\overflow}{\magenta{\texttt{overflow}} }
+\def\por{$\mathtt{\cdot}$}
 
 %% Cartelito HACER EJERCICIO
 \newcommand{\hacer}{
-        {\color{red!80!black}{\faIcon[regular]{flushed}... hay que hacerlo! \faIcon[regular]{sad-cry}}}\par
+  {\color{red!80!black}{\faIcon[regular]{flushed}... hay que hacerlo! \faIcon[regular]{sad-cry}}}\par
   {\color{black!70!white}
     \small Si querés mandarlo: Telegram $\to$ \href{\dirTelegram}{\small\faIcon{telegram}},
     o  mejor aún si querés subirlo en \LaTeX $\to$ \href{\dirRepo}{\small \faIcon{github}}.
   }\par
 }
-
 
 % separadores
 \newcommand{\separador}{
@@ -54,27 +55,25 @@
   }
 }
 
-
 % Contributors
 \newcommand{\aporte}[2]{
-        \href{#1}{#2}
+  \href{#1}{#2}
 }
 
 \newenvironment{aportes}{
-        \par
-\vspace{10pt}
-\begin{minipage}{1\linewidth}
-  \tt\footnotesize
-  Los culpables de que esto haya sucedido:
-\vspace{-10pt}
-  \begin{multicols}{3}
-  \begin{itemize}[label={\tiny\yellow{\faIcon{medal}}}]
-      }{
-    \end{itemize}
-  \end{multicols}
-\end{minipage}
+  \par
+  \vspace{10pt}
+  \begin{minipage}{1\linewidth}
+    \tt\footnotesize
+    Los culpables de que esto haya sucedido:
+    \vspace{-10pt}
+    \begin{multicols}{3}
+      \begin{itemize}[label={\tiny\yellow{\faIcon{medal}}}]
+        }{
+      \end{itemize}
+    \end{multicols}
+  \end{minipage}
 }
-
 
 % Update time
 \def\update{\tiny
@@ -85,9 +84,9 @@
 %  acá está el comando para escribir \igual{arriba}[abajo] con texto!
 \NewDocumentCommand{\igual}{m o}{
   \IfNoValueTF{#2}{
-          \overset{\mathclap{\texttt{#1}}}{\texttt{=}}
+    \overset{\mathclap{\texttt{#1}}}{\texttt{=}}
   }{
-          \tt \overset{\mathclap{\texttt{#1}}}{\underset{\mathclap{\texttt{#2}}}=}
+    \tt \overset{\mathclap{\texttt{#1}}}{\underset{\mathclap{\texttt{#2}}}=}
   }
 }
 
@@ -110,7 +109,7 @@
   \addtocounter{ejercicio}{-1} % counter - 1
   \refstepcounter{ejercicio} % referencia al anterior y luego + 1
   \label{#1}
-  }
+}
 \newcommand{\refEjercicio}[1]{{\bf \ref{#1}.}}
 
 %%%=======================================================
@@ -135,6 +134,7 @@
 \def\justDoIt{https://www.youtube.com/watch?v=ZXsQAXx_ao0}
 \def\ariane5{https://youtu.be/PK_yguLapgA?t=91}
 \def\chinito{https://www.youtube.com/watch?v=ebz4xuPf-is}
+\def\dancingQueen{https://www.youtube.com/watch?v=xFrGuyw1V8s}
 
 %%% Iconos más usados
 \def\github{\faIcon{github}}

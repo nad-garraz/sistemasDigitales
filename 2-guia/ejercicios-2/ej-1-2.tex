@@ -1,0 +1,30 @@
+Todas las compuertas mencionadas en esta práctica son de 1 o 2 entradas, a menos que se indique lo contrario.
+Usaremos símbolos detallados a continuación para representar las distintas funciones lógicas:
+{\tt XOR $\to \oplus$, NAND $\to |$, NOR $\to \downarrow$   }.\par
+Durante la presente práctica se recomienda fuertemente la utilización de un simulador para experimentar con
+los componentes y cicuitos propuestos y verificar las soluciones. Una recomendación es el \href{http://www.cburch.com/logisim}{\texttt{Logisim} (http://www.cburch.com/logisim/)}\par\bigskip
+
+\section*{\tt Circuitos Combinatorios}
+
+\begin{enunciado}{\ejercicio}
+  Demostrar si las siguientes equivalencias de fórmulas booleanas son verdaderas o falsas:
+  \begin{enumerate}[label=\tt\alph*)]
+    \item {\tt x\por z=(x+\negado{\texttt{y}})\por (\negado{x}+z)}.
+    \item {\tt x $\oplus$ (y\por z) = (x $\oplus$ y)\por (x $\oplus$ z)} donde se aplica la propiedad distributiva con respecto a $\oplus$.
+  \end{enumerate}
+\end{enunciado}
+
+\begin{enumerate}[label=\tt\alph*)]
+  \item
+        {\tt
+        (x+y)(x+\negado{y})(\negado{x}+z) =
+        (xx+x\negado{y}+xy+y\negado{y})(\negado{x}+z) =
+        (x+x(y+\negado{y})+0)(\negado{x}+z) =
+        x(\negado{x}+z) =
+        x\negado{x}+xz
+        $\igual{\checkmark}$
+        xz
+        }
+  \item {\tt x $\oplus$ (y\por z) = (x$\oplus$y)\por (x $\oplus$ z)} donde se aplica la propiedad distributiva con respecto a $\oplus$.
+\end{enumerate}
+

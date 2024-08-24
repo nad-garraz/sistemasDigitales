@@ -1,0 +1,51 @@
+%%% ===========================
+%%% Iconos para los itemize
+\def\iconTeoriaUno{\tiny\faIcon{laptop}}
+\def\iconTeoriaDos{\tiny\faIcon{calculator}}
+\def\iconTeoriaTres{\tiny\faIcon{laptop-code}}
+%%% ===========================
+
+\input{teoria-2/circuitosTeoria2}
+
+\newcommand{\distributivaTabla}[2]{
+  \begin{tabular}{c}
+    \distributivaUno{#1}{#2} \\
+    $\mathbb\equiv$          \\
+    \distributivaDos{#2}{#1}
+  \end{tabular}
+}
+
+\newcommand{\asociatividadTabla}[2]{
+  \begin{tabular}{c}
+    \asociaUno{#1}{#2} \\
+    $\mathbb\equiv$    \\
+    \asociaDos{#2}{#1}
+  \end{tabular}
+}
+
+\newcommand{\morganTabla}[2]{
+  \begin{tabular}{c}
+    \morganUno{#1}  \\
+    $\mathbb\equiv$ \\
+    \morganDos{#2}
+  \end{tabular}
+}
+
+\begin{itemize}[label=\iconTeoriaUno]
+  \item En la siguiente table \texttt{A,B y C} son booleanas que pueden tener cualquier valor \texttt{0} o \texttt{1}:\par
+
+        \hspace{-1cm}\tt\small
+        \begin{tabular}{|c|c|c|c|c|}
+          \hline
+          Propiedad           & AND, \por                               & \AND{}{}{}                                                                                                                                      & OR, +                                          & \OR{}{}{}                                                                                                                                     \\ \hline
+          Identidad           & 1\por A = A                             & \AND{\red{1}}{0}{0} \AND{\red{1}}{1}{1}                                                                                                         & 0+A=A                                          & \OR{\red{0}}{1}{\red{1}} \OR{\red{0}}{1}{1}                                                                                                   \\  \hline
+          Nulo                & 0\por A = 0                             & \AND{\red{0}}{0}{\red{0}} \AND{\red{0}}{1}{\red{0}}                                                                                             & 1+A=1                                          & \OR{\red{1}}{1}{\red{1}} \OR{\red{1}}{0}{\red{1}}                                                                                             \\ \hline
+          Idempotencia        & A\por A = A                             & \AND{1}{1}{1} \AND{0}{0}{0}                                                                                                                     & A+A=A                                          & \OR{1}{1}{1} \OR{0}{0}{0}                                                                                                                     \\\hline
+          Inverso/complemento & A\por\negado{A} = 0                     & \AND{1}{0}{0} \AND{0}{1}{0}                                                                                                                     & A+\negado{A}=1                                 & \OR{1}{0}{1} \OR{0}{1}{1}                                                                                                                     \\ \hline
+          Conmutatividad      & \href{\dancingQueen}{A\por B=B\por A}   & \AND{\magenta{1}, \blue{0}}{\magenta{1}, \blue{0}}{\magenta{1}\blue{0}} \AND{\magenta{1}, \blue{0}}{\magenta{0}, \blue{1}}{\magenta{0}\blue{0}} & A+B=B+A                                        & \OR{\magenta{1}, \blue{0}}{\magenta{1}, \blue{0}}{\magenta{1}\blue{0}} \OR{\magenta{1}, \blue{0}}{\magenta{0}, \blue{1}}{\magenta{0}\blue{0}} \\ \hline
+          Distributividad     & A+(B\por C)=(A+B)\por(A+C)              & \distributivaTabla{or}{and}                                                                                                                     & A\por(B+C)=A\por B+A\por C                     & \distributivaTabla{and}{or}                                                                                                                   \\ \hline
+          Asociatividad       & (A\por B)\por C=A\por(B\por C)          & \asociatividadTabla{and}{and}                                                                                                                   & (A+B)+C=A+(B+C)                                & \asociatividadTabla{or}{or}                                                                                                                   \\ \hline
+          Absorción           & A\por(A+B)=A                            & \absorcion{and}{or}                                                                                                                             & A+A\por B=A                                    & \absorcion{or}{and}                                                                                                                           \\ \hline
+          De Morgan           & \negado{A\cdot B}=\negado{A}+\negado{B} & \morganTabla{nand}{or}                                                                                                                          & \negado{A\texttt{+}B}=\negado{A}\por\negado{B} & \morganTabla{nor}{and}                                                                                                                        \\ \hline
+        \end{tabular}
+\end{itemize}
