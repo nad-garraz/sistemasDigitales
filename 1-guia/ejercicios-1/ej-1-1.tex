@@ -1,100 +1,101 @@
 \begin{enunciado}
-	{\ejercicio}
-	\begin{enumerate}[label=\alph{*})]
-		\item Utilizando el método del cociente, expresar en bases 2, 3 y 5 los números
-			\nBase{33}{10} y \nBase{511}{10}.
+  {\ejercicio}
+  \begin{enumerate}[label=\alph{*})]
+    \item Utilizando el método del cociente, expresar en bases 2, 3 y 5 los números
+          \nBase{33}{10} y \nBase{511}{10}.
 
-		\item Expresar en decimal los números \nBase{1111}{2}, \nBase{1111}{7} y
-			\nBase{CAFE}{10}.
+    \item Expresar en decimal los números \nBase{1111}{2}, \nBase{1111}{7} y
+          \nBase{CAFE}{10}.
 
-		\item Expresar \nBase{17}{8} en base 5 y \nBase{BABA}{13} en base 6.
+    \item Expresar \nBase{17}{8} en base 5 y \nBase{BABA}{13} en base 6.
 
-		\item Pasar \nBase{(1010 1110 1010 1101)}{2}, \nBase{(1111 1011 0010 1100 0111)}{2},
-			\nBase{(0 0110 0010 100l)}{2}, a base 4, 8 y 16 agrupando bits.
+    \item Pasar \nBase{(1010 1110 1010 1101)}{2}, \nBase{(1111 1011 0010 1100 0111)}{2},
+          \nBase{(0 0110 0010 100l)}{2}, a base 4, 8 y 16 agrupando bits.
 
-		\item Expresar en decimal los números \nBase{0x142536}{} 
-  			y \nBase{0xFCD9}{}, y pasar a base 16 los números \nBase{7848}{10} y \nBase{46183}{10}.
-	\end{enumerate}
+    \item Expresar en decimal los números \nBase{0x142536}{}
+          y \nBase{0xFCD9}{}, y pasar a base 16 los números \nBase{7848}{10} y \nBase{46183}{10}.
+  \end{enumerate}
 \end{enunciado}
 
 \begin{enumerate}[label=\alph{*})]
-	\item \textit{Fijarse si el número es cercado a una potencia de la base
-		buscada.}\par \nBase{33}{10} = \nBase{(10 0001)}{2} = \nBase{1020}{3} = \nBase{113}{5}\par
-		\nBase{511}{10} = \nBase{(1111 1111)}{2} = \nBase{(20 0221)}{3} = \nBase{4021}{5}
+  \item \textit{Fijarse si el número es cercado a una potencia de la base
+          buscada.}\par \nBase{33}{10} = \nBase{(10 0001)}{2} = \nBase{1020}{3} = \nBase{113}{5}\par
+        \nBase{511}{10} = \nBase{(1111 1111)}{2} = \nBase{(20 0221)}{3} = \nBase{4021}{5}
 
-	\item \red{¿Tiene truco?}\par \nBase{1111}{2} = \nBase{15}{10}\par \nBase{1111}{7}
-		= \nBase{400}{10}\par \nBase{CAFE}{16} = \texttt{\blue{C}}$\times 16^{3} +$ \texttt{\blue{A}}$\times
-		16^{2} +$ \texttt{\blue{F}}$\times 16^{1} +$ \texttt{\blue{E}}$\times 16^{0}$
-		$=$ \texttt{\blue{12}}$\times 16^{3} +$ \texttt{\blue{10}}$\times 16^{2} +$ \texttt{\blue{15}}$\times
-		16^{1} +$ \texttt{\blue{14}}$\times 16^{0} =$ \nBase{51966}{10}
+  \item \red{¿Tiene truco?}\par \nBase{1111}{2} = \nBase{15}{10}\par \nBase{1111}{7}
+        = \nBase{400}{10}\par \nBase{CAFE}{16} = \texttt{\blue{C}}$\times 16^{3} +$ \texttt{\blue{A}}$\times
+          16^{2} +$ \texttt{\blue{F}}$\times 16^{1} +$ \texttt{\blue{E}}$\times 16^{0}$
+        $=$ \texttt{\blue{12}}$\times 16^{3} +$ \texttt{\blue{10}}$\times 16^{2} +$ \texttt{\blue{15}}$\times
+          16^{1} +$ \texttt{\blue{14}}$\times 16^{0} =$ \nBase{51966}{10}
 
-	\item \red{¿Hay truco para no pasar por base 10?}\par \nBase{17}{8} = \nBase{15}{10}
-		= \nBase{30}{5}\par \nBase{BABA}{13} = \texttt{\blue{11}}$\times 13^{3} +$
-		\texttt{\blue{10}}$\times 13^{2} +$ \texttt{\blue{11}}$\times 13^{1} +$
-		\texttt{\blue{10}}$\times 13^{0} =$ \nBase{26180}{10} = \nBase{321112}{6}
+  \item \red{¿Hay truco para no pasar por base 10?}\par \nBase{17}{8} = \nBase{15}{10}
+        = \nBase{30}{5}\par \nBase{BABA}{13} = \texttt{\blue{11}}$\times 13^{3} +$
+        \texttt{\blue{10}}$\times 13^{2} +$ \texttt{\blue{11}}$\times 13^{1} +$
+        \texttt{\blue{10}}$\times 13^{0} =$ \nBase{26180}{10} = \nBase{321112}{6}
 
-	\item Como las bases se tiene que cambiar a otras bases que son potencia de 2,
-		se puede hacer agrupando los bits.
-		\begin{center}
-			\begin{tikzpicture}
-				\node[cyan] (b3) {1};
-				\node[cyan, right=of b3] (b2) {1};
-				\node[cyan, right=of b2] (b1) {1};
-				\node[cyan, right=of b1] (b0) {1};
+  \item Como las bases se tiene que cambiar a otras bases que son potencia de 2,
+        se puede hacer agrupando los bits.
+        \begin{center}
+          \begin{tikzpicture}
+            \node[cyan] (b3) {1};
+            \node[cyan, right=of b3] (b2) {1};
+            \node[cyan, right=of b2] (b1) {1};
+            \node[cyan, right=of b1] (b0) {1};
 
-				\node[magenta, below=0.5cm of b2] (q1) {3};
-				\node[magenta, right=of q1] (q0) {3};
+            \node[magenta, below=0.5cm of b2] (q1) {3};
+            \node[magenta, right=of q1] (q0) {3};
 
-				\node[OliveGreen, above=0.5cm of b3] (o1) {1};
-				\node[OliveGreen, above=0.5cm of b1] (o0) {7};
+            \node[OliveGreen, above=0.5cm of b3] (o1) {1};
+            \node[OliveGreen, above=0.5cm of b1] (o0) {7};
 
-				\node[orange, below=0.5cm of $(q1.south)!0.5!(q0.south)$] (h0) {F};
+            \node[orange, below=0.5cm of $(q1.south)!0.5!(q0.south)$] (h0) {F};
 
-				\draw[-latex] (b3.south) -- ++(0,-0.25cm) -| (q1.north);
-				\draw[-latex] (b2.south) -- ++(0,-0.25cm) -| (q1.north);
-				\draw[-latex] (b1.south) -- ++(0,-0.25cm) -| (q0.north);
-				\draw[-latex] (b0.south) -- ++(0,-0.25cm) -| (q0.north);
+            \draw[-latex] (b3.south) -- ++(0,-0.25cm) -| (q1.north);
+            \draw[-latex] (b2.south) -- ++(0,-0.25cm) -| (q1.north);
+            \draw[-latex] (b1.south) -- ++(0,-0.25cm) -| (q0.north);
+            \draw[-latex] (b0.south) -- ++(0,-0.25cm) -| (q0.north);
 
-				\draw[-latex] (b2.north) -- ++(0,+0.25cm) -| (o0.south);
-				\draw[-latex] (b1.north) -- ++(0,+0.25cm) -| (o0.south);
-				\draw[-latex] (b0.north) -- ++(0,+0.25cm) -| (o0.south);
-				\draw[-latex] (b3.north) -| (o1.south);
+            \draw[-latex] (b2.north) -- ++(0,+0.25cm) -| (o0.south);
+            \draw[-latex] (b1.north) -- ++(0,+0.25cm) -| (o0.south);
+            \draw[-latex] (b0.north) -- ++(0,+0.25cm) -| (o0.south);
+            \draw[-latex] (b3.north) -| (o1.south);
 
-				\draw[-latex] (q0.south) -- ++(0,-0.25cm) -| (h0.north);
-				\draw[-latex] (q1.south) -- ++(0,-0.25cm) -| (h0.north);
+            \draw[-latex] (q0.south) -- ++(0,-0.25cm) -| (h0.north);
+            \draw[-latex] (q1.south) -- ++(0,-0.25cm) -| (h0.north);
 
-				\node[left=0.25cm of b3] (base2) {Base 2: \cyan{1111} $\to$};
-				\node[below left=0.5cm and 0.25cm of b3]
-					(base4)
-					{Base 4: \magenta{33} $\to$};
-				\node[above left=0.5cm and 0.25cm of b3]
-					(base8)
-					{Base 8: \green{17} $\to$};
-				\node[below left=1.5cm and 0.25cm of b3]
-					(base16)
-					{Base 16: \yellow{F} $\to$};
-			\end{tikzpicture}
-		\end{center}
+            \node[left=0.25cm of b3] (base2) {Base 2: \cyan{1111} $\to$};
+            \node[below left=0.5cm and 0.25cm of b3]
+            (base4)
+            {Base 4: \magenta{33} $\to$};
+            \node[above left=0.5cm and 0.25cm of b3]
+            (base8)
+            {Base 8: \green{17} $\to$};
+            \node[below left=1.5cm and 0.25cm of b3]
+            (base16)
+            {Base 16: \yellow{F} $\to$};
+          \end{tikzpicture}
+        \end{center}
 
-		\nBase{(1010 1110 1010 1101)}{2} = \nBase{(22 32 22 31)}{4} = \nBase{127255}{8}
-		= \nBase{AEAD}{16}\par \nBase{(1111 1011 0010 1100 0111)}{2} = \nBase{(33 23 02 30 13)}{4}
-		= \nBase{(373 1307)}{8} = \nBase{FB2CD}{16}\par \nBase{(0 0110 0010 1001)}{2}
-		= \nBase{(12 02 21)}{4} = \nBase{3051}{8} = \nBase{C29}{16}\par
+        \nBase{(1010 1110 1010 1101)}{2} = \nBase{(22 32 22 31)}{4} = \nBase{127255}{8}
+        = \nBase{AEAD}{16}\par \nBase{(1111 1011 0010 1100 0111)}{2} = \nBase{(33 23 02 30 13)}{4}
+        = \nBase{(373 1307)}{8} = \nBase{FB2CD}{16}\par \nBase{(0 0110 0010 1001)}{2}
+        = \nBase{(12 02 21)}{4} = \nBase{3051}{8} = \nBase{C29}{16}\par
 
-	\item \nBase{0x142536}{} = \nBase{142536}{16} = \texttt{\blue{1}}$\times 16^{5}
-		+$ \texttt{\blue{4}}$\times 16^{4} +$ \texttt{\blue{2}}$\times 16^{3} +$ \texttt{\blue{5}}$\times
-		16^{2} +$ \texttt{\blue{3}}$\times 16^{1} +$ \texttt{\blue{6}}$\times 16^{0}
-		=$ \nBase{(132 0246)}{10}\par
+  \item \nBase{0x142536}{} = \nBase{142536}{16} = \texttt{\blue{1}}$\times 16^{5}
+          +$ \texttt{\blue{4}}$\times 16^{4} +$ \texttt{\blue{2}}$\times 16^{3} +$ \texttt{\blue{5}}$\times
+          16^{2} +$ \texttt{\blue{3}}$\times 16^{1} +$ \texttt{\blue{6}}$\times 16^{0}
+          =$ \nBase{(132 0246)}{10}\par
 
-		\nBase{0xFCD9}{} = \nBase{FCD9}{16} = \texttt{\blue{15}}$\times 16^{3} +$ \texttt{\blue{12}}$\times
-		16^{2} +$ \texttt{\blue{13}}$\times 16^{1} +$ \texttt{\blue{9}}$\times 16^{0}
-		=$ \nBase{(6 4729)}{10}\par
+        \nBase{0xFCD9}{} = \nBase{FCD9}{16} = \texttt{\blue{15}}$\times 16^{3} +$ \texttt{\blue{12}}$\times
+          16^{2} +$ \texttt{\blue{13}}$\times 16^{1} +$ \texttt{\blue{9}}$\times 16^{0}
+          =$ \nBase{(6 4729)}{10}\par
 
-		\nBase{7848}{10} = \nBase{0x1EA8}{}\par \nBase{(4 6183)}{10} = \nBase{0xB467}{}
+        \nBase{7848}{10} = \nBase{0x1EA8}{}\par \nBase{(4 6183)}{10} = \nBase{0xB467}{}
 \end{enumerate}
 
 % Contribuciones
 \begin{aportes}
-	%\aporte{url}{nombre icono}
-	\item \aporte{\dirRepo}{Nad Garraz \github}
+  %\aporte{url}{nombre icono}
+  \item \aporte{\dirRepo}{Nad Garraz \github}
+  \item \aporte{https://github.com/arielbakal}{Ariel Bakal \github}
 \end{aportes}
