@@ -25,6 +25,22 @@ los componentes y cicuitos propuestos y verificar las soluciones. Una recomendac
         $\igual{\checkmark}$
         xz
         }
-  \item {\tt x $\oplus$ (y\por z) = (x$\oplus$y)\por (x $\oplus$ z)} donde se aplica la propiedad distributiva con respecto a $\oplus$.
+  \item {\tt x$\oplus$(yz) = (x$\oplus$y)(x$\oplus$z)} donde se aplica la propiedad distributiva con respecto a $\oplus$.\par
+        \begin{center}
+          {\tt
+            \begin{tabular}{|c|c|c|c |c|c|c|c}
+              \cline{1-8}
+              x & y & z & yz & x $\oplus$ (yz) & x$\oplus$y & x$\oplus$z & (x$\oplus$y)(x$\oplus$z) \\ \cline{1-8}\rowcolor{lightgray}
+              1 & 1 & 1 & 1  & \magenta{0}     & 0          & 0          & \magenta{0}              \\ \cline{1-8}\rowcolor{Cerulean}
+              1 & 1 & 0 & 0  & \magenta{1}     & 0          & 1          & \magenta{0}              \\ \cline{1-8}\rowcolor{Cerulean}
+              1 & 0 & 1 & 0  & \magenta{1}     & 1          & 0          & \magenta{0}              \\ \cline{1-8}
+              1 & 0 & 0 & 0  & \magenta{1}     & 1          & 1          & \magenta{1}              \\ \cline{1-8}\rowcolor{lightgray}
+              0 & 1 & 1 & 1  & \magenta{1}     & 1          & 1          & \magenta{1}              \\ \cline{1-8}
+              0 & 1 & 0 & 0  & \magenta{0}     & 1          & 0          & \magenta{0}              \\ \cline{1-8}\rowcolor{lightgray}
+              0 & 0 & 1 & 0  & \magenta{0}     & 0          & 1          & \magenta{0}              \\ \cline{1-8}
+              0 & 0 & 0 & 0  & \magenta{0}     & 0          & 0          & \magenta{0}              \\ \cline{1-8}\rowcolor{lightgray}
+            \end{tabular}
+          }
+        \end{center}
+                Bueh, las líneas \blue{pintadas} muestran los contraejeplos
 \end{enumerate}
-
