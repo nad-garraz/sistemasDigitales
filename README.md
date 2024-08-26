@@ -65,10 +65,10 @@ $ pdflatex 1-sol.tex
 ```
 
 Eso debería actualizar el archivo 1-sol.pdf con los cambios 
-que hubieras realizado. [grupo de Telegram](https://t.me/+1znt2GV1i8cwMTNh)Luego tenés que hacer una pull request para actualizar el repositorio con tu aporte!
+que hubieras realizado. [grupo de Telegram](https://t.me/+X4p0xKnXp0Y3ZThh)Luego tenés que hacer una pull request para actualizar el repositorio con tu aporte!
 
 
- - Metete en el [grupo de Telegram](https://t.me/+1znt2GV1i8cwMTNh) si necesitás ayuda con alguno de esos pasos. La idea es que te capacites para poder vos también mantener el repo vivo y actualizado, porque yo ya hice mi parte y me da paja mantener esto sin ayuda.
+ - Metete en el [grupo de Telegram](https://t.me/+X4p0xKnXp0Y3ZThh) si necesitás ayuda con alguno de esos pasos. La idea es que te capacites para poder vos también mantener el repo vivo y actualizado, porque yo ya hice mi parte y me da paja mantener esto sin ayuda.
 Podés usar el código como quieras siguiendo esta licencia: [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/)
 
 Este es el _apunte único_
