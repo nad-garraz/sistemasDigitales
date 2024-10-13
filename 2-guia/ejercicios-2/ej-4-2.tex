@@ -1,20 +1,21 @@
 \begin{enunciado}{\ejercicio}
-  \begin{circuitikz}[scale=0.25, transform shape, , every node/.style={font=\ttfamily}]
-    \ctikzset{logic ports=ieee}
-    \draw (0,1) node[ieeestd and port] (componente1){1};% pongo el componente en el (0,0)
-    \draw (0,-0.5) node[ieeestd and port] (componente2){2};% pongo el componente en el (0,0)
-    \draw (2.5,0.5) node[ieeestd nor port] (componente3){3};% pongo el componente en el (0,0)
-    \draw (-1,-2.5) node[ieeestd and port, rotate=-90] (componente4){4};% pongo el componente en el (0,0)
-    \draw (componente1.in 1) -- ++(-0.9,0) node[left] {\red{A}};
-    \draw (componente1.in 2) -- ++(-0.5,0) node[above] {\blue{B}};
-    \draw (componente2.in 2) -- ++(-0.5,0) node[above] {\blue{B}};
-    \draw (componente2.in 1) -- ++(-0.9,0) node[left] {\red{A}};
-    \draw (componente3.out) |- (componente4.in 1);
-    \draw (componente1.out) |- (componente3.in 1); % input 1, el de arriba, relativo
-    \draw (componente2.out) |- (componente3.in 2); % input 2, el de abajo, relativo
-    \draw (componente4.in 2) |- (componente2.in 2); % input 2, el de abajo, relativo
-    \node [notcirc, below=4pt] at (componente4.in 2){}; % input 2, el de abajo, relativo
-    \node [notcirc, right=4pt] at (componente2.in 2){};
-    \draw (componente4.out) -- ++(1,0) node[above] {\green{Y}}; % input 2, el de abajo, relativo
-  \end{circuitikz}
+  %\begin{circuitikz}[scale=0.25, transform shape, , every node/.style={font=\ttfamily}]
+  %  \ctikzset{logic ports=ieee}
+  %  \draw (0,1) node[ieeestd and port] (componente1){1};% pongo el componente en el (0,0)
+  %  \draw (0,-0.5) node[ieeestd and port] (componente2){2};% pongo el componente en el (0,0)
+  %  \draw (2.5,0.5) node[ieeestd nor port] (componente3){3};% pongo el componente en el (0,0)
+  %  \draw (-1,-2.5) node[ieeestd and port, rotate=-90] (componente4){4};% pongo el componente en el (0,0)
+  %  \draw (componente1.in 1) -- ++(-0.9,0) node[left] {\red{A}};
+  %  \draw (componente1.in 2) -- ++(-0.5,0) node[above] {\blue{B}};
+  %  \draw (componente2.in 2) -- ++(-0.5,0) node[above] {\blue{B}};
+  %  \draw (componente2.in 1) -- ++(-0.9,0) node[left] {\red{A}};
+  %  \draw (componente3.out) |- (componente4.in 1);
+  %  \draw (componente1.out) |- (componente3.in 1); % input 1, el de arriba, relativo
+  %  \draw (componente2.out) |- (componente3.in 2); % input 2, el de abajo, relativo
+  %  \draw (componente4.in 2) |- (componente2.in 2); % input 2, el de abajo, relativo
+  %  \node [notcirc, below=4pt] at (componente4.in 2){}; % input 2, el de abajo, relativo
+  %  \node [notcirc, right=4pt] at (componente2.in 2){};
+  %  \draw (componente4.out) -- ++(1,0) node[above] {\green{Y}}; % input 2, el de abajo, relativo
+  %\end{circuitikz}
+        \hacer
 \end{enunciado}

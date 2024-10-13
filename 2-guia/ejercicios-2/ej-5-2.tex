@@ -1,3 +1,59 @@
 \begin{enunciado}{\ejercicio}
-\hacer
+
+  Dadas las funciones booleanas \texttt{F} y \texttt{G}
+  definidas a partir de las siguientes tablas de verdad:\par
+
+  \begin{center}
+    {        \ttfamily
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        A & B & C & F(A,B,C) \\ \hline
+        1 & 1 & 0 & 0        \\ \hline
+        1 & 0 & 0 & 1        \\ \hline
+        1 & 0 & 1 & 1        \\ \hline
+        0 & 1 & 0 & 0        \\ \hline
+        0 & 0 & 1 & 0        \\ \hline
+        0 & 1 & 1 & 1        \\ \hline
+        1 & 1 & 1 & 1        \\ \hline
+        0 & 0 & 0 & 0        \\ \hline
+      \end{tabular}
+    }
+    {        \ttfamily
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        A & B & C & G(A,B,C) \\ \hline
+        0 & 0 & 0 & 1        \\ \hline
+        0 & 1 & 0 & 0        \\ \hline
+        0 & 0 & 1 & 1        \\ \hline
+        0 & 1 & 1 & 1        \\ \hline
+        1 & 0 & 0 & 1        \\ \hline
+        1 & 1 & 0 & 1        \\ \hline
+        1 & 0 & 1 & 0        \\ \hline
+        1 & 1 & 1 & 1        \\ \hline
+      \end{tabular}
+    }
+  \end{center}
+
+  \begin{enumerate}[label=\alph*)]
+    \item Escribir la \texttt{suma de productos} para ambas funciones. Calcular la cantidad
+          de compuertas que la implementación literal requeriría en cada caso.
+
+    \item ¿Se pueden simplificar las expresiones usando propiedades del álgebra booleana?
+          Para cada función decidir si es posible y, en caso de que lo sea, dibujar el circuito utilizando
+          la menor cantidad de compuertas que pueda.
+  \end{enumerate}
+
 \end{enunciado}
+
+\begin{enumerate}[label=\alph*)]
+  \item Eligiendo las líneas que tienen 1s en la función:
+        $$
+          \texttt{F = A\negado{B}\negado{C} + A\negado{B}C + \negado{A}BC + ABC }
+        $$
+        Con esta descripción necesitaría cuatro compuertas AND de 3 entradas y 1 OR de 4 entradas.
+
+  \item ¿Se pueden simplificar las expresiones usando propiedades del álgebra booleana?
+        Para cada función decidir si es posible y, en caso de que lo sea, dibujar el circuito utilizando
+        la menor cantidad de compuertas que pueda.
+\end{enumerate}
+
