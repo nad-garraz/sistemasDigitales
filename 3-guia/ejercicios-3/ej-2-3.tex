@@ -1,4 +1,46 @@
 \begin{enunciado}{\ejercicio}
-    \hacer
+        \begin{enumerate}
+            \item ¿A cuántos bytes se direcciona la memoria en la arquitectura RISC-V? ¿Cuántos bytes
+            hay en una palabra?
+            \item Sabiendo que la memoria se encuentra en el estado que se ve a continuación, indicar el
+            resultado de las siguiente operaciones sabiendo que t0 = 0xAD.
+            
+            \begin{center}
+            \begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c|c|} 
+                \hline
+                Dirección & $\dots$ & 0xAA & 0xAB & 0xAC & 0xAD & 0xAE & 0xAF & 0xB0 & 0xB1 & 0xB2 & $\dots$ \\ 
+                \hline
+                Valor     & $\dots$ & 0x34 & 0x11 & 0xF4 & 0x09 & 0x12 & 0x73 & 0x20 & 0x24 & 0xFF & $\dots$ \\
+                \hline
+            \end{tabular}
+            \end{center}
+
+            \begin{multicols}{4}
+                \begin{enumerate}
+                    \item \textbf{lw} t1, 0(t0)
+                    \item \textbf{lw} t1, 2(t0)
+                    \item \textbf{lw} t1, -3(t0)
+                    \item \textbf{lh} t1, -1(t0)
+                    \item \textbf{lhu} t1, -1(t0)
+                    \item \textbf{lb} t1, 5(t0)
+                    \item \textbf{lbu} t1, 5(t0)
+                \end{enumerate}
+            \end{multicols}
+        \end{enumerate}
     \end{enunciado}
     
+    \begin{enumerate}
+        \item La memoria en la arquitectura de RISC-V se direcciona a 32 bits, es decir, a unos $32 \div 8 = 4 \text{ bytes}$
+
+        \item 
+
+        \begin{enumerate}
+            \item t1 = 0x20731209
+            \item t1 = 0xFF242073 
+            \item t1 = 0x09F41134
+            \item t1 = 0x000009F4
+            \item t1 = 0x000009F4
+            \item t1 = 0xFFFFFFFF
+            \item t1 = 0x000000FF
+        \end{enumerate}
+    \end{enumerate}
