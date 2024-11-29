@@ -32,9 +32,68 @@ direccion 0x00.
         \end{riscv}
     
     \end{multicols}
-    
-    
-
-    
+        
     \end{enunciado}
+
+    \begin{enumerate}
+    
+        \item Empecemos por el código de la izquierda
+
+        \setlength{\columnsep}{30pt} % Aviud the numbers to overappear inside the gray square
+        \begin{multicols}{2}
+            \begin{center}
+                \large{Código}
+            \end{center}
+        \begin{riscv}
+    Inicio: addi a0, zero, 10
+    addi a1, zero, 50
+    Ciclo: ble a1, zero, Fin
+    sub a1, a1, a0
+    j Ciclo
+    Fin: beq a1, zero, Inicio
+        \end{riscv}
+        \columnbreak
+        \begin{center}
+            \large{Posición en memoria}
+        \end{center}
+        \begin{riscv}
+    # 0x00
+    # 0x04
+    # 0x08
+    # 0x0C
+    # 0x10
+    # 0x14
+        \end{riscv}
+    \end{multicols}
+
+    Ahora vamos con el código de la derecha
+
+    \setlength{\columnsep}{30pt} % Aviud the numbers to overappear inside the gray square
+        \begin{paracol}{2}
+            \begin{center}
+                \large{Código}
+            \end{center}
+        \begin{riscv}
+    Inicio: li a1, 0xffffffff
+    li a2, 0x1
+    Vuelta: beq a1, a2, Inicio
+    sub a2, a2, a1
+    nop
+    j Vuelta
+        \end{riscv}
+        \switchcolumn
+        \begin{center}
+            \large{Posición en memoria}
+        \end{center}
+        \begin{riscv}
+    # 0x00
+    # 0x04
+    # 0x08
+    # 0x0C
+    # 0x10
+    # 0x14
+        \end{riscv}
+    \end{paracol}
+        
+    \end{enumerate}
     
