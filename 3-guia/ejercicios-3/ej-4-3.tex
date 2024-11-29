@@ -1,4 +1,24 @@
 \begin{enunciado}{\ejercicio}
-    \hacer
+    Dado los siguientes dos programas y suponiendo que ambos empiezan en la
+direccion 0x00.
+
+    \begin{enumerate}
+        \item Escribir en que direccion se encuentra cada etiqueta
+        \item ¿Como se maneja el branching en RISC-V? ¿Y los saltos incondicionales? ¿Es afectado
+        por la direccion de memoria donde comienza el programa? Para cada instruccion de
+        salto, escribir el offset que se aplicara al PC
+    \end{enumerate}
+
+    \begin{riscv}
+        Inicio: addi a0, zero, 10
+        addi a1, zero, 50
+        Ciclo: ble a1, zero, Fin
+        sub a1, a1, a0
+        j Ciclo
+        Fin: beq a1, zero, Inicio
+    \end{riscv}
+    
+
+    
     \end{enunciado}
     

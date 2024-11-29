@@ -1,11 +1,9 @@
 \begin{enunciado}{\ejercicio}
     Dado el siguiente arreglo de enteros de 16 bits en lenguaje Java:
 
-    \begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=1.5,innerbottommargin=1.5, outerlinewidth=1, linecolor=light-gray]
-    \begin{lstlisting}[language=Java]
+    \begin{java}
         int [] arreglo16b = { -1 , 170 , 255 , -255 , 0 , 32 , 10000 , 0};
-    \end{lstlisting}
-    \end{mdframed}
+    \end{java}
 
     Sabiendo que este arreglo se guarda en memoria empezando en la direccion 0xCC.
 
@@ -39,16 +37,14 @@
     \end{center}
 
 \item
-\begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=1.5,innerbottommargin=1.5, outerlinewidth=1, linecolor=light-gray]
-    \begin{lstlisting}[language={[RISC-V]Assembler}]
+    \begin{riscv}
         obtenerIndex:
         # Recibe en a0 la referencia de la posicion
         # Recibe en a1 la posicion a obtenerIndex
         # Devuelve en a0 el valor que tenia en esa posicion el array
         add a0, a0, a1
         lw a0, 0(a0)
-    \end{lstlisting}
-    \end{mdframed}
+    \end{riscv}
 \end{enumerate}
 
     
