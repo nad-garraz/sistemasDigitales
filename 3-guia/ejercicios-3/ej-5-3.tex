@@ -1,4 +1,32 @@
 \begin{enunciado}{\ejercicio}
-    \hacer
+    Dado el siguiente programa en lenguaje C.
+
+    \begin{center}
+    \begin{cLang}[linewidth=6cm]
+    int x = 2;
+    int y = 32;
+    x = x + y ;
+    \end{cLang}
+\end{center}
+    
+    \begin{enumerate}
+        \item Traducir a lenguaje esamblador de RISC-V. Usar los registros t0 y t1 inicilizados con
+numeros de 8 bits para representar a las variables x e y respectivamente.
+        \item  Escribir un programa que guarde en t2 un numero de 32 bits divido en sus 12 bits mas
+        significativos en t0 y el resto de 20 bits en t1.
+        \item Escribir un programa que guarde en t2 un numero de 32 bits divido en sus 12 bits mas
+        significativos en t0 y el resto de 20 bits en \textbf{t1}.
+    \end{enumerate}
     \end{enunciado}
+
+    \begin{enumerate}
+        \item 
+        \begin{riscv}
+    addi t0, zero, 2
+    addi t1, zero, 32
+    add t0, t0, t1
+        \end{riscv}
+        \item \hacer
+        \item \hacer
+    \end{enumerate}
     
