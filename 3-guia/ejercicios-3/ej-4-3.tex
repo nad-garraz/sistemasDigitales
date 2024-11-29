@@ -23,12 +23,12 @@ direccion 0x00.
         \end{riscv}
         \columnbreak
         \begin{riscv}
-    Inicio: addi a0, zero, 10
-    addi a1, zero, 50
-    Ciclo: ble a1, zero, Fin
-    sub a1, a1, a0
-    j Ciclo
-    Fin: beq a1, zero, Inicio
+    Inicio: li a1, 0xffffffff
+    li a2, 0x1
+    Vuelta: beq a1, a2, Inicio
+    sub a2, a2, a1
+    nop
+    j Vuelta
         \end{riscv}
     
     \end{multicols}
