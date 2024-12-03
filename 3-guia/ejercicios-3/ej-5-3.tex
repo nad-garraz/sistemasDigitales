@@ -13,9 +13,10 @@
         \item Traducir a lenguaje esamblador de RISC-V. Usar los registros t0 y t1 inicilizados con
 numeros de 8 bits para representar a las variables x e y respectivamente.
         \item  Escribir un programa que guarde en t2 un numero de 32 bits divido en sus 12 bits mas
-        significativos en t0 y el resto de 20 bits en t1.
-        \item Escribir un programa que guarde en t2 un numero de 32 bits divido en sus 12 bits mas
         significativos en t0 y el resto de 20 bits en \textbf{t1}.
+        \item ¿Como maneja RISC-V la extension de signo en los inmediatos de 12 bits? ¿Que resultado 
+        generaria la instruccion  \textbf{andi} a0, a0, -2048 cuando a0 vale 0xFFFFFFFF? Re-escribir
+        el codigo del inciso  \textbf{a)} para numeros de 32 bits sin utilizar la instruccion  \textbf{li}.
     \end{enumerate}
     \end{enunciado}
 
@@ -27,6 +28,13 @@ numeros de 8 bits para representar a las variables x e y respectivamente.
     add t0, t0, t1
         \end{riscv}
         \item \hacer
-        \item \hacer
+        \item RISC V maneja la extensión de los signos en los inmediatos, completando con el bit más significativos
+        del inmediato. 
+        La instruccion \textbf{andi} a0, a0, -2048 si a0 vale 0xFFFFFFFF sería el valor de -2048 en 32 bits, que  en 
+        hexadecimal es:  $\neg$ 0x0000 0800 $+ 1$ = 0xFFFF F000 
+
+        \begin{enumerate}
+            \item \hacer
+        \end{enumerate}
     \end{enumerate}
     
