@@ -23,8 +23,8 @@ numeros de 8 bits para representar a las variables x e y respectivamente.
     \begin{enumerate}
         \item 
         \begin{riscv}
-    addi t0, zero, 2
-    addi t1, zero, 32
+    li t0, 2
+    li t1, 32
     add t0, t0, t1
         \end{riscv}
         \item \hacer
@@ -34,7 +34,12 @@ numeros de 8 bits para representar a las variables x e y respectivamente.
         hexadecimal es:  $\neg$ 0x0000 0800 $+ 1$ = 0xFFFF F000 
 
         \begin{enumerate}
-            \item \hacer
+            \item 
+                \begin{riscv}
+    addi t0, zero, 2
+    addi t1, zero, 32
+    add t0, t0, t1
+                \end{riscv}
         \end{enumerate}
     \end{enumerate}
     
