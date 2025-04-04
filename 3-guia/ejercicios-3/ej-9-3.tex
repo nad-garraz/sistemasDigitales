@@ -1,4 +1,60 @@
 \begin{enunciado}{\ejercicio}
-    \hacer
-    \end{enunciado}
+  Se cuenta con cuatro datos sin signo de 1-byte cada uno almacenados en el registro \texttt{t0} y queremos sumar el valor de los cuatro datos.
+  Escribir un programa en lenguaje ensamblador RISC-V que realice esta operación y almacene el resultado en el registro \texttt{t0}.
+
+  Ejemplo:
+  \begin{center}
+    { \tt
+      \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        t0 & 0x90 & 0x1A & 0x00 & 0x02 \\
+        \hline
+      \end{tabular}
+    }
+  \end{center}
+  Con este dato el registro debería valer \texttt{0x000000AC}.
+\end{enunciado}
+
+
+\begin{riscv}
+# Se usa la directiva de ensamblador .data
+# se carga la palabra antes de comenzar 
+# el programa
+
+.data
+    palabra: .byte 0x90
+             .byte 0x1a
+             .byte 0x00
+             .byte 0x02
+
+# Ahora se usa la directiva donde se usaran variable
+# locales y ademas desde donde se podra acceder a 
+# la informacion del segmento de memoria .data
+
+.text
+main:
+    la s0 palabra   # s0 <- dirección del primer elemento de palabra 
+    addi sp sp -4
+    sw s0 0(sp)
     
+    li a2 4 # contador inicializado en 4
+    li t0 0 # acumulo la suma en t0
+    
+    for:
+        lbu t1 0(s0) # t1 <-- valor del byte
+        addi s0 s0 1 # Siguiente byte
+        
+        add t0 t0 t1 # suma
+        
+        addi a2 a2 -1 # actualizo el contador
+        beqz a2 done
+    j for
+    
+done:
+    lw s0 4(sp)
+    addi sp sp 4
+    j fin
+     
+fin: j fin
+\end{riscv}
+

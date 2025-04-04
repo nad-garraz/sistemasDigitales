@@ -7,6 +7,11 @@
                                             |____/|_|\__, |_|\__\__,_|_|\___||___/
                                                     |___/                        
 ```
+## El repo está discontinuado.
+## No estoy manteniéndolo, pero si tenés ganas de revivirlo avisame.
+## Suerte `(-_-)/`
+
+
 
 ## Las guías resueltas:
 

@@ -1,4 +1,40 @@
 \begin{enunciado}{\ejercicio}
-    \hacer
-    \end{enunciado}
-    
+  ¿Qué es \texttt{.text} y \texttt{.data}? ¿Qué tipo de información se guarda en cada una de ellas?
+\end{enunciado}
+
+Pongo un poco de contexto, para que no quede con sabor a nada la respuesta:
+
+\bigskip
+
+En el camino desde escribir el programa en \textit{alto nivel} (C, python, Java,etc.) hasta llegar al ejecutable, se pasa por el \textit{ensamblador}.
+
+Las palabras \texttt{.text, .data, .word} entre otras son algunas de las \texttt{directivas del ensamblador} (\textit{assembler directives}).
+
+\medskip
+
+Cuando el programa
+se carga en la memoria (para luego leerse) se genera un \textit{mapa de la memoria} el cual tiene una estructura particular dividida en \textit{segmentos},
+donde se cargan cosas en cierto orden.
+
+\medskip
+
+Entre esos segmentos están el \texttt{Text Segment} y el \texttt{Global Data Segment}, segmentos a los que se accede con el \texttt{PC} (program counter) y el \texttt{GP} (global pointer) respectivamente.
+
+\medskip
+
+\texttt{The Text Segment}:
+En esta parte de la memoria se guarda el código que escribimos en las instrucciones, \textit{la sustancia lógica que programamos en el Ripes o emulador favorito}.
+
+\texttt{The Global Data Segment}:
+En esta parte de la memoria se guardan variables globales. Éstas se pueden accedere desde cualquier parte
+del código, desde adentro de alguna función por ejemplo. Esto sucede antes de que comience el programa.
+\bigskip
+
+Entonces cuando se usan las palabras \texttt{.text} y \texttt{.data}, lo hacemos para decirle al ensamblador en cual
+segmento de la memoria meter el código que estamos escribiendo en el Ripes o emulador en cuestión.
+
+% Contribuciones
+\begin{aportes}
+  %\aporte{url}{nombre icono}
+  \item \aporte{\dirRepo}{Nad Garraz \github}
+\end{aportes}
